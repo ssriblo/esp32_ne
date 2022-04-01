@@ -11,7 +11,7 @@
 
 static char tag[] = "rmt_tests";
 
-void runRmt() {
+void initRmt(){
 	ESP_LOGI(tag, ">> runRmt");
 
 	rmt_config_t config;
@@ -34,7 +34,8 @@ void runRmt() {
 	config.gpio_num = 22;
 	ESP_ERROR_CHECK(rmt_config(&config));
 	ESP_ERROR_CHECK(rmt_driver_install(config.channel, 0, 0));
-
+}
+void runRmt() {
 	rmt_item32_t items_0[3];
 	items_0[0].duration0 = 590;
 	items_0[0].level0 = 0;

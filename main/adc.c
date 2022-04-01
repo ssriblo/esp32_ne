@@ -15,7 +15,13 @@
 #include "dac.h"
 #include "rmt.h"
 
-static const char *TAG = "newEcho";
+/******************************************************************************
+ToDo:
+- add DAC code
+
+******************************************************************************/
+
+static const char *TAG = "newEchoADC";
 
 ///////////////////////////////////////////////////////////////////////////////
 // Helper function takes tick into nanoseconds
@@ -87,6 +93,7 @@ void IRAM_ATTR adc_start()
 #endif
     continuous_adc_init(adc1_chan_mask, adc2_chan_mask, channel, sizeof(channel) / sizeof(adc_channel_t));
 
+#ifdef ADC_DMA_TIME_MEASUREMENT    
     // test code time spend measure, not for release:
     int t1 = portGET_RUN_TIME_COUNTER_VALUE();
     int t11 = sys_port_get_time_into_tick();
@@ -97,10 +104,13 @@ void IRAM_ATTR adc_start()
     uint64_t t_end = esp_timer_get_time();
     int t22 = sys_port_get_time_into_tick();
     int t2 = portGET_RUN_TIME_COUNTER_VALUE();
+#endif
+
+    initRmt();
 
     adc_digi_start(); // ADC+DMA start
 #ifdef RELEASE
-    rmt_start();
+    runRmt();
     dac_start();    
 #endif    
 #ifdef ADC_DMA_TIME_MEASUREMENT    

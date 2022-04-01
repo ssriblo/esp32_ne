@@ -7,7 +7,7 @@
 
 //////////////////////////////////////////////////////////////////////////////
 // For release comment this option
-#define ADC_DMA_TIME_MEASUREMENT            1
+//#define ADC_DMA_TIME_MEASUREMENT            1
 
 // For release uncomment this option:
 #define RELEASE                             1
