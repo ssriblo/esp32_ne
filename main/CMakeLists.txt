@@ -1,2 +1,2 @@
-idf_component_register(SRCS "rmt.c" "dac.c" "utiliy.c" "gpio.c" "app_main.c" "adc.c" "dac-cosin.c"
+idf_component_register(SRCS "rmt.c" "dac.c" "utility.c" "gpio.c" "app_main.c" "adc.c" "dac-cosin.c"
                     INCLUDE_DIRS ".")

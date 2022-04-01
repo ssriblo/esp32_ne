@@ -1,6 +1,10 @@
 #ifndef _DEFINES_H_
 #define _DEFINES_H_
 
+#include <string.h>
+#include <stdio.h>
+#include "driver/adc.h"
+
 //////////////////////////////////////////////////////////////////////////////
 // For release comment this option
 #define ADC_DMA_TIME_MEASUREMENT            1
