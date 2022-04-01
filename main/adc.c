@@ -15,12 +15,6 @@
 #include "dac.h"
 #include "rmt.h"
 
-/******************************************************************************
-ToDo:
-- add DAC code
-
-******************************************************************************/
-
 static const char *TAG = "newEchoADC";
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -107,6 +101,7 @@ void IRAM_ATTR adc_start()
 #endif
 
     initRmt();
+    dac_init();
 
     adc_digi_start(); // ADC+DMA start
 #ifdef RELEASE

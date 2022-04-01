@@ -20,8 +20,9 @@
 #define DAC_CHAN               0           
 
 static const char *TAG = "dac";
+uint8_t profile[PROFILE_SIZE];
 
-void dac_start(){
+void dac_init(){
     esp_err_t ret;
 
     ret = dac_output_enable(DAC_CHAN);
@@ -29,6 +30,15 @@ void dac_start(){
 
     SENS.sar_dac_ctrl1.sw_tone_en = 0;
     SENS.sar_dac_ctrl2.dac_cw_en1 = 0;
+
+    for(int i=0; i<PROFILE_SIZE; i++){
+        profile[i] = i;
+    }
+}
+
+
+
+void dac_start(){
 
     HAL_FORCE_MODIFY_U32_REG_FIELD(RTCIO.pad_dac[0], dac, 50);
     HAL_FORCE_MODIFY_U32_REG_FIELD(RTCIO.pad_dac[0], dac, 50);

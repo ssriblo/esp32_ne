@@ -5,6 +5,13 @@
 #include <stdio.h>
 #include "driver/adc.h"
 
+/******************************************************************************
+ToDo:
+- DAC code shift, levels
+- ADC shift, levels, profile
+
+******************************************************************************/
+
 //////////////////////////////////////////////////////////////////////////////
 // For release comment this option
 //#define ADC_DMA_TIME_MEASUREMENT            1
@@ -12,6 +19,7 @@
 // For release uncomment this option:
 #define RELEASE                             1
 //////////////////////////////////////////////////////////////////////////////
+#define PROFILE_SIZE        100
 
 #define TIMES              1024 //256
 #define GET_UNIT(x)        ((x>>3) & 0x1)
