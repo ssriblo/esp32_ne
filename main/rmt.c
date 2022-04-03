@@ -64,7 +64,6 @@ void runRmt() {
 	items_1[2].duration1 = 0;
 	items_1[2].level1 = 0;
 
-	while(1) {
 	ESP_ERROR_CHECK(rmt_write_items(RMT_CHANNEL_0, items_0,
 			3, /* Number of items_0 */
 			0 /* NOT wait till done */));
@@ -81,13 +80,6 @@ void runRmt() {
 	ESP_ERROR_CHECK(rmt_write_items(RMT_CHANNEL_1, items_1,
 			3, /* Number of items_1 */
 			0 /* wait till done */));
-
-		vTaskDelay(1000/portTICK_PERIOD_MS);
-	}
-	ESP_LOGI(tag, "<< runRmtTest");
 }
 
 
-void rmt_start(){
-
-}

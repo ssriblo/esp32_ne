@@ -7,10 +7,30 @@
 
 /******************************************************************************
 ToDo:
-- DAC code shift, levels
-- ADC shift, levels, profile
+    - DAC code shift, levels
+    - ADC shift, levels, profile
+    - Disable all interrupt and Freertos task switch
 
 ******************************************************************************/
+
+/******************************************************************************
+Hardware pin's setup:
+    GPIO21 - Transmitter Channel A
+    GPIO22 - Transmitter Channel B
+    GPIO35 - Echo ADC input
+    GPIOxx - DAC ouptut
+    pin - UART Tx - depends from current breadboard 
+    pin - UART Rx - depends from current breadboard 
+    pin TBD - minus 5V ADC input
+    pin TBD - 40V ADC input
+    pin TBD - minus 5V pulse gen 
+    pin TBD - 40V pulse gen
+
+******************************************************************************/
+
+/****************************************************************/
+#define BUILD_VERSION       "Build Version: 0.1 "
+/****************************************************************/
 
 //////////////////////////////////////////////////////////////////////////////
 // For release comment this option
@@ -31,11 +51,10 @@ ToDo:
 #define MAX_STORE_BUFF_SIZE 1024                    // let to find out what is it?
 #define CONV_LIMIT_NUM      250                     // let to find out what is it?
 #define SAMPLE_FREQ_HZ      2000*1000               // 2000000 is maximum value, not more!
+#define DAC_CHANNEL_1       0    /*!< DAC channel 1 is GPIO25(ESP32) / GPIO17(ESP32S2) */
+#define DAC_CHANNEL_2       1    /*!< DAC channel 2 is GPIO26(ESP32) / GPIO18(ESP32S2) */
 
-
-static uint16_t adc1_chan_mask = BIT(7);
-static uint16_t adc2_chan_mask = 0;
-static adc_channel_t channel[1] = {ADC1_CHANNEL_7};
-
+#define ADC1_CHAN_MASK      BIT(7)
+#define ADC2_CHAN_MASK      0  
 
 #endif
