@@ -9,9 +9,19 @@
 ToDo:
     - DAC code shift, levels
     - ADC shift, levels, profile
-    - Disable all interrupt and Freertos task switch
+    - Disable all interrupt and Freertos task switch - tried to do but rebooing...
+    - Setup proper 4 pulses at RMT module
 
 ******************************************************************************/
+
+/******************************************************************************
+1.75 MHz 4 pulses setup:
+    - period = 1/1.75=0.571 us
+    - pulse duration = period/2 = 0.2855 us = 285 ns
+    - RMT tick = 1/80MHz = 12.5 ns
+    - pulse rmt's tick = 285/12.5 = 22.8 ticks
+******************************************************************************/
+
 
 /******************************************************************************
 Hardware pin's setup:
@@ -29,15 +39,13 @@ Hardware pin's setup:
 ******************************************************************************/
 
 /****************************************************************/
-#define BUILD_VERSION       "Build Version: 0.1 "
+#define BUILD_VERSION       "Build Version: 0.2 "
 /****************************************************************/
 
 //////////////////////////////////////////////////////////////////////////////
-// For release comment this option
-//#define ADC_DMA_TIME_MEASUREMENT            1
-
 // For release uncomment this option:
 #define RELEASE                             1
+
 //////////////////////////////////////////////////////////////////////////////
 #define PROFILE_SIZE        100
 

@@ -36,36 +36,53 @@ void initRmt(){
 	ESP_ERROR_CHECK(rmt_driver_install(config.channel, 0, 0));
 }
 void runRmt() {
-	rmt_item32_t items_0[3];
-	items_0[0].duration0 = 590;
+	rmt_item32_t items_0[5];
+	items_0[0].duration0 = 390;
 	items_0[0].level0 = 0;
-	items_0[0].duration1 = 22;
+	items_0[0].duration1 = 350;
 	items_0[0].level1 = 0;
-	items_0[1].duration0 = 5;
+	items_0[1].duration0 = 13;
 	items_0[1].level0 = 1;
-	items_0[1].duration1 = 10;
+	items_0[1].duration1 = 33;
 	items_0[1].level1 = 0;
-	items_0[2].duration0 = 0;
-	items_0[2].level0 = 0;
-	items_0[2].duration1 = 0;
+	items_0[2].duration0 = 13;
+	items_0[2].level0 = 1;
+	items_0[2].duration1 = 33;
 	items_0[2].level1 = 0;
+	items_0[3].duration0 = 13;
+	items_0[3].level0 = 1;
+	items_0[3].duration1 = 33;
+	items_0[3].level1 = 0;
+	items_0[4].duration0 = 13;
+	items_0[4].level0 = 1;
+	items_0[4].duration1 = 33;
+	items_0[4].level1 = 0;
 
-	rmt_item32_t items_1[3];
+
+	rmt_item32_t items_1[5];
 	items_1[0].duration0 = 22;
 	items_1[0].level0 = 1;
 	items_1[0].duration1 = 22;
 	items_1[0].level1 = 0;
 	items_1[1].duration0 = 22;
-	items_1[1].level0 = 0;
+	items_1[1].level0 = 1;
 	items_1[1].duration1 = 22;
 	items_1[1].level1 = 0;
-	items_1[2].duration0 = 0;
-	items_1[2].level0 = 0;
-	items_1[2].duration1 = 0;
+	items_1[2].duration0 = 22;
+	items_1[2].level0 = 1;
+	items_1[2].duration1 = 22;
 	items_1[2].level1 = 0;
+	items_1[3].duration0 = 22;
+	items_1[3].level0 = 1;
+	items_1[3].duration1 = 22;
+	items_1[3].level1 = 0;
+	items_1[4].duration0 = 22;
+	items_1[4].level0 = 0;
+	items_1[4].duration1 = 22;
+	items_1[4].level1 = 0;
 
 	ESP_ERROR_CHECK(rmt_write_items(RMT_CHANNEL_0, items_0,
-			3, /* Number of items_0 */
+			5, /* Number of items_0 */
 			0 /* NOT wait till done */));
     __asm__ __volatile__ ("nop");
     __asm__ __volatile__ ("nop");
@@ -78,7 +95,7 @@ void runRmt() {
     __asm__ __volatile__ ("nop");
 
 	ESP_ERROR_CHECK(rmt_write_items(RMT_CHANNEL_1, items_1,
-			3, /* Number of items_1 */
+			5, /* Number of items_1 */
 			0 /* wait till done */));
 }
 
