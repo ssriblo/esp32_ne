@@ -1,5 +1,5 @@
 [1/5] cd /home/me20/esp/newEcho/build/esp-idf/esptool_py && /home/me20/.espressif/python_env/idf4.4_py3.8_env/bin/python /home/me20/esp/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 partition --type app /home/me20/esp/newEcho/build/partition_table/partition-table.bin /home/me20/esp/newEcho/build/newEcho.bin
-newEcho.bin binary size 0x32620 bytes. Smallest app partition is 0x100000 bytes. 0xcd9e0 bytes (80%) free.
+newEcho.bin binary size 0x33be0 bytes. Smallest app partition is 0x100000 bytes. 0xcc420 bytes (80%) free.
 [2/5] Performing build step for 'bootloader'
 [1/1] cd /home/me20/esp/newEcho/build/bootloader/esp-idf/esptool_py && /home/me20/.espressif/python_env/idf4.4_py3.8_env/bin/python /home/me20/esp/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x1000 /home/me20/esp/newEcho/build/bootloader/bootloader.bin
 Bootloader binary size 0x62c0 bytes. 0xd40 bytes (12%) free.
@@ -19,31 +19,30 @@ Changing baud rate to 460800
 Changed.
 Configuring flash size...
 Flash will be erased from 0x00001000 to 0x00007fff...
-Flash will be erased from 0x00010000 to 0x00042fff...
+Flash will be erased from 0x00010000 to 0x00043fff...
 Flash will be erased from 0x00008000 to 0x00008fff...
 Compressed 25280 bytes to 15792...
 Writing at 0x00001000... (100 %)
-Wrote 25280 bytes (15792 compressed) at 0x00001000 in 1.1 seconds (effective 192.4 kbit/s)...
+Wrote 25280 bytes (15792 compressed) at 0x00001000 in 1.1 seconds (effective 190.4 kbit/s)...
 Hash of data verified.
-Compressed 206368 bytes to 107362...
+Compressed 211936 bytes to 110347...
 Writing at 0x00010000... (14 %)
-Writing at 0x0001c82f... (28 %)
-Writing at 0x000220ed... (42 %)
-Writing at 0x00028526... (57 %)
-Writing at 0x0002f034... (71 %)
-Writing at 0x00039578... (85 %)
-Writing at 0x0003f09f... (100 %)
-Wrote 206368 bytes (107362 compressed) at 0x00010000 in 2.9 seconds (effective 578.9 kbit/s)...
+Writing at 0x0001cc05... (28 %)
+Writing at 0x000224fc... (42 %)
+Writing at 0x00028941... (57 %)
+Writing at 0x0002ea95... (71 %)
+Writing at 0x00038478... (85 %)
+Writing at 0x0003f417... (100 %)
+Wrote 211936 bytes (110347 compressed) at 0x00010000 in 2.9 seconds (effective 581.0 kbit/s)...
 Hash of data verified.
 Compressed 3072 bytes to 103...
 Writing at 0x00008000... (100 %)
-Wrote 3072 bytes (103 compressed) at 0x00008000 in 0.1 seconds (effective 223.1 kbit/s)...
+Wrote 3072 bytes (103 compressed) at 0x00008000 in 0.1 seconds (effective 225.5 kbit/s)...
 Hash of data verified.
 
 Leaving...
 Hard resetting via RTS pin...
- dynamic allocation:[0m
-[0;32mI (ú[0;32mI (12) boot: ESP-IDF v4.4-dirty 2nd stage bootloader[0m
+heap_init: Initializing. RAM availabì[0;32mI (12) boot: ESP-IDF v4.4-dirty 2nd stage bootloader[0m
 [0;32mI (13) boot: compile time 18:22:05[0m
 [0;32mI (13) boot: chip revision: 1[0m
 [0;32mI (15) boot_comm: chip revision: 1, min. bootloader chip revision: 0[0m
@@ -58,35 +57,35 @@ Hard resetting via RTS pin...
 [0;32mI (67) boot:  2 factory          factory app      00 00 00010000 00100000[0m
 [0;32mI (74) boot: End of partition table[0m
 [0;32mI (78) boot_comm: chip revision: 1, min. application chip revision: 0[0m
-[0;32mI (85) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=09ba4h ( 39844) map[0m
-[0;32mI (108) esp_image: segment 1: paddr=00019bcc vaddr=3ffb0000 size=023a4h (  9124) load[0m
-[0;32mI (112) esp_image: segment 2: paddr=0001bf78 vaddr=40080000 size=040a0h ( 16544) load[0m
-[0;32mI (121) esp_image: segment 3: paddr=00020020 vaddr=400d0020 size=1a030h (106544) map[0m
-[0;32mI (161) esp_image: segment 4: paddr=0003a058 vaddr=400840a0 size=0858ch ( 34188) load[0m
-[0;32mI (175) esp_image: segment 5: paddr=000425ec vaddr=50000000 size=00010h (    16) load[0m
-[0;32mI (182) boot: Loaded app from partition at offset 0x10000[0m
-[0;32mI (182) boot: Disabling RNG early entropy source...[0m
-[0;32mI (196) cpu_start: Pro cpu up.[0m
-[0;32mI (196) cpu_start: Starting app cpu, entry point is 0x40081104[0m
+[0;32mI (85) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=0a18ch ( 41356) map[0m
+[0;32mI (109) esp_image: segment 1: paddr=0001a1b4 vaddr=3ffb0000 size=023b4h (  9140) load[0m
+[0;32mI (113) esp_image: segment 2: paddr=0001c570 vaddr=40080000 size=03aa8h ( 15016) load[0m
+[0;32mI (121) esp_image: segment 3: paddr=00020020 vaddr=400d0020 size=1ad90h (109968) map[0m
+[0;32mI (163) esp_image: segment 4: paddr=0003adb8 vaddr=40083aa8 size=08de8h ( 36328) load[0m
+[0;32mI (178) esp_image: segment 5: paddr=00043ba8 vaddr=50000000 size=00010h (    16) load[0m
+[0;32mI (185) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (185) boot: Disabling RNG early entropy source...[0m
+[0;32mI (198) cpu_start: Pro cpu up.[0m
+[0;32mI (199) cpu_start: Starting app cpu, entry point is 0x40081128[0m
 [0;32mI (0) cpu_start: App cpu up.[0m
-[0;32mI (210) cpu_start: Pro cpu start user code[0m
-[0;32mI (210) cpu_start: cpu freq: 240000000[0m
-[0;32mI (210) cpu_start: Application information:[0m
-[0;32mI (214) cpu_start: Project name:     newEcho[0m
-[0;32mI (219) cpu_start: App version:      105799b-dirty[0m
-[0;32mI (225) cpu_start: Compile time:     Apr  4 2022 18:22:23[0m
-[0;32mI (231) cpu_start: ELF file SHA256:  fd09e591590bc938...[0m
-[0;32mI (237) cpu_start: ESP-IDF:          v4.4-dirty[0m
-[0;32mI (242) heap_init: Initializing. RAM available for dynamic allocation:[0m
-[0;32mI (249) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
-[0;32mI (255) heap_init: At 3FFB2D50 len 0002D2B0 (180 KiB): DRAM[0m
-[0;32mI (262) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
-[0;32mI (268) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
-[0;32mI (274) heap_init: At 4008C62C len 000139D4 (78 KiB): IRAM[0m
-[0;32mI (282) spi_flash: detected chip: generic[0m
-[0;32mI (285) spi_flash: flash io: dio[0m
-[0;33mW (289) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
-[0;32mI (303) cpu_start: Starting scheduler on PRO CPU.[0m
+[0;32mI (213) cpu_start: Pro cpu start user code[0m
+[0;32mI (213) cpu_start: cpu freq: 240000000[0m
+[0;32mI (213) cpu_start: Application information:[0m
+[0;32mI (217) cpu_start: Project name:     newEcho[0m
+[0;32mI (222) cpu_start: App version:      d537deb-dirty[0m
+[0;32mI (228) cpu_start: Compile time:     Apr  6 2022 10:52:40[0m
+[0;32mI (234) cpu_start: ELF file SHA256:  dd1674c07e03aff1...[0m
+[0;32mI (240) cpu_start: ESP-IDF:          v4.4-dirty[0m
+[0;32mI (245) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (252) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (258) heap_init: At 3FFB2DB0 len 0002D250 (180 KiB): DRAM[0m
+[0;32mI (264) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (271) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (277) heap_init: At 4008C890 len 00013770 (77 KiB): IRAM[0m
+[0;32mI (284) spi_flash: detected chip: generic[0m
+[0;32mI (288) spi_flash: flash io: dio[0m
+[0;33mW (292) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (306) cpu_start: Starting scheduler on PRO CPU.[0m
 [0;32mI (0) cpu_start: Starting scheduler on APP CPU.[0m
 [0;32mI (20) rmt_tests: >> runRmt[0m
 [0;32mI (20) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
@@ -103,33 +102,2621 @@ TIMES=1024  sample_freq_hz= 2000000
 [0;32mI (390) ADC: adc_pattern[0].unit is :0[0m
 TIMES=1024  sample_freq_hz= 2000000
 [0;32mI (400) TASK:: >>> START[0m
-[0;32mI (400) TASK:: ret is 0, ret_num is 1024[0m
-[0;32mI (420) TASK:: >>> END[0m
-[0;32mI (730) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
-[0;32mI (730) ADC: adc_pattern[0].atten is :0[0m
-[0;32mI (730) ADC: adc_pattern[0].channel is :7[0m
-[0;32mI (740) ADC: adc_pattern[0].unit is :0[0m
+[0;32mI (410) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (430) TASK:: >>> END[0m
+[0;32mI (740) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (740) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (740) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (750) ADC: adc_pattern[0].unit is :0[0m
 TIMES=1024  sample_freq_hz= 2000000
-[0;32mI (750) TASK:: >>> START[0m
-[0;32mI (750) TASK:: ret is 0, ret_num is 1024[0m
-[0;32mI (770) TASK:: >>> END[0m
-[0;32mI (1080) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
-[0;32mI (1080) ADC: adc_pattern[0].atten is :0[0m
-[0;32mI (1080) ADC: adc_pattern[0].channel is :7[0m
-[0;32mI (1090) ADC: adc_pattern[0].unit is :0[0m
+[0;32mI (760) TASK:: >>> START[0m
+[0;32mI (770) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (790) TASK:: >>> END[0m
+[0;32mI (1100) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (1100) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (1100) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (1110) ADC: adc_pattern[0].unit is :0[0m
 TIMES=1024  sample_freq_hz= 2000000
-[0;32mI (1100) TASK:: >>> START[0m
-[0;32mI (1100) TASK:: ret is 0, ret_num is 1024[0m
-[0;32mI (1120) TASK:: >>> END[0m
-[0;33m--- idf_monitor on /dev/ttyUSB0 115200 ---[0m
-[0;33m--- Quit: Ctrl+] | Menu: Ctrl+T | Help: Ctrl+T followed by Ctrl+H ---[0m
-[0;33m0x40081104: call_start_cpu1 at /home/me20/esp/esp-idf/components/esp_system/port/cpu_start.c:156
-[0m
-[0m
-Executing action: flash
-Running ninja in directory /home/me20/esp/newEcho/build
-Executing "ninja flash"...
-Executing action: monitor
-Running idf_monitor in directory /home/me20/esp/newEcho
-Executing "/home/me20/.espressif/python_env/idf4.4_py3.8_env/bin/python /home/me20/esp/esp-idf/tools/idf_monitor.py -p /dev/ttyUSB0 -b 115200 --toolchain-prefix xtensa-esp32-elf- --target esp32 --revision 0 /home/me20/esp/newEcho/build/newEcho.elf -m '/home/me20/.espressif/python_env/idf4.4_py3.8_env/bin/python' '/home/me20/esp/esp-idf/tools/idf.py' '-p' '/dev/ttyUSB0'"...
-Done
+[0;32mI (1120) TASK:: >>> START[0m
+[0;32mI (1130) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (1150) TASK:: >>> END[0m
+[0;32mI (1460) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (1460) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (1460) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (1470) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (1480) TASK:: >>> START[0m
+[0;32mI (1490) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (1510) TASK:: >>> END[0m
+[0;32mI (1820) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (1820) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (1820) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (1830) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (1840) TASK:: >>> START[0m
+[0;32mI (1850) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (1870) TASK:: >>> END[0m
+[0;32mI (2180) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (2180) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (2180) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (2190) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (2200) TASK:: >>> START[0m
+[0;32mI (2210) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (2230) TASK:: >>> END[0m
+[0;32mI (2540) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (2540) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (2540) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (2550) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (2560) TASK:: >>> START[0m
+[0;32mI (2570) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (2590) TASK:: >>> END[0m
+[0;32mI (2900) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (2900) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (2900) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (2910) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (2920) TASK:: >>> START[0m
+[0;32mI (2930) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (2950) TASK:: >>> END[0m
+[0;32mI (3260) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (3260) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (3260) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (3270) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (3280) TASK:: >>> START[0m
+[0;32mI (3290) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (3310) TASK:: >>> END[0m
+[0;32mI (3620) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (3620) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (3620) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (3630) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (3640) TASK:: >>> START[0m
+[0;32mI (3650) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (3670) TASK:: >>> END[0m
+[0;32mI (3980) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (3980) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (3980) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (3990) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (4000) TASK:: >>> START[0m
+[0;32mI (4010) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (4030) TASK:: >>> END[0m
+[0;32mI (4340) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (4340) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (4340) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (4350) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (4360) TASK:: >>> START[0m
+[0;32mI (4370) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (4390) TASK:: >>> END[0m
+[0;32mI (4700) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (4700) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (4700) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (4710) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (4720) TASK:: >>> START[0m
+[0;32mI (4730) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (4750) TASK:: >>> END[0m
+[0;32mI (5060) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (5060) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (5060) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (5070) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (5080) TASK:: >>> START[0m
+[0;32mI (5090) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (5110) TASK:: >>> END[0m
+[0;32mI (5420) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (5420) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (5420) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (5430) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (5440) TASK:: >>> START[0m
+[0;32mI (5450) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (5470) TASK:: >>> END[0m
+[0;32mI (5780) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (5780) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (5780) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (5790) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (5800) TASK:: >>> START[0m
+[0;32mI (5810) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (5830) TASK:: >>> END[0m
+[0;32mI (6140) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (6140) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (6140) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (6150) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (6160) TASK:: >>> START[0m
+[0;32mI (6170) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (6190) TASK:: >>> END[0m
+[0;32mI (6500) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (6500) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (6500) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (6510) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (6520) TASK:: >>> START[0m
+[0;32mI (6530) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (6550) TASK:: >>> END[0m
+[0;32mI (6860) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (6860) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (6860) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (6870) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (6880) TASK:: >>> START[0m
+[0;32mI (6890) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (6910) TASK:: >>> END[0m
+[0;32mI (7220) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (7220) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (7220) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (7230) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (7240) TASK:: >>> START[0m
+[0;32mI (7250) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (7270) TASK:: >>> END[0m
+[0;32mI (7580) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (7580) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (7580) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (7590) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (7600) TASK:: >>> START[0m
+[0;32mI (7610) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (7630) TASK:: >>> END[0m
+[0;32mI (7940) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (7940) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (7940) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (7950) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (7960) TASK:: >>> START[0m
+[0;32mI (7970) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (7990) TASK:: >>> END[0m
+[0;32mI (8300) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (8300) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (8300) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (8310) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (8320) TASK:: >>> START[0m
+[0;32mI (8330) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (8350) TASK:: >>> END[0m
+[0;32mI (8660) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (8660) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (8660) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (8670) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (8680) TASK:: >>> START[0m
+[0;32mI (8690) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (8710) TASK:: >>> END[0m
+[0;32mI (9020) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (9020) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (9020) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (9030) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (9040) TASK:: >>> START[0m
+[0;32mI (9050) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (9070) TASK:: >>> END[0m
+[0;32mI (9380) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (9380) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (9380) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (9390) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (9400) TASK:: >>> START[0m
+[0;32mI (9410) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (9430) TASK:: >>> END[0m
+[0;32mI (9740) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (9740) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (9740) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (9750) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (9760) TASK:: >>> START[0m
+[0;32mI (9770) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (9790) TASK:: >>> END[0m
+[0;32mI (10100) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (10100) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (10100) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (10110) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (10120) TASK:: >>> START[0m
+[0;32mI (10130) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (10150) TASK:: >>> END[0m
+[0;32mI (10460) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (10460) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (10460) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (10470) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (10480) TASK:: >>> START[0m
+[0;32mI (10490) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (10510) TASK:: >>> END[0m
+[0;32mI (10820) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (10820) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (10820) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (10830) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (10840) TASK:: >>> START[0m
+[0;32mI (10850) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (10870) TASK:: >>> END[0m
+[0;32mI (11180) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (11180) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (11180) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (11190) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (11200) TASK:: >>> START[0m
+[0;32mI (11210) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (11230) TASK:: >>> END[0m
+[0;32mI (11540) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (11540) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (11540) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (11550) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (11560) TASK:: >>> START[0m
+[0;32mI (11570) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (11590) TASK:: >>> END[0m
+[0;32mI (11900) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (11900) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (11900) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (11910) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (11920) TASK:: >>> START[0m
+[0;32mI (11930) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (11950) TASK:: >>> END[0m
+[0;32mI (12260) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (12260) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (12260) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (12270) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (12280) TASK:: >>> START[0m
+[0;32mI (12290) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (12310) TASK:: >>> END[0m
+[0;32mI (12620) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (12620) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (12620) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (12630) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (12640) TASK:: >>> START[0m
+[0;32mI (12650) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (12670) TASK:: >>> END[0m
+[0;32mI (12980) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (12980) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (12980) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (12990) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (13000) TASK:: >>> START[0m
+[0;32mI (13010) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (13030) TASK:: >>> END[0m
+[0;32mI (13340) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (13340) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (13340) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (13350) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (13360) TASK:: >>> START[0m
+[0;32mI (13370) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (13390) TASK:: >>> END[0m
+[0;32mI (13700) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (13700) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (13700) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (13710) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (13720) TASK:: >>> START[0m
+[0;32mI (13730) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (13750) TASK:: >>> END[0m
+[0;32mI (14060) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (14060) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (14060) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (14070) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (14080) TASK:: >>> START[0m
+[0;32mI (14090) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (14110) TASK:: >>> END[0m
+[0;32mI (14420) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (14420) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (14420) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (14430) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (14440) TASK:: >>> START[0m
+[0;32mI (14450) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (14470) TASK:: >>> END[0m
+[0;32mI (14780) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (14780) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (14780) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (14790) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (14800) TASK:: >>> START[0m
+[0;32mI (14810) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (14830) TASK:: >>> END[0m
+[0;32mI (15140) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (15140) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (15140) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (15150) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (15160) TASK:: >>> START[0m
+[0;32mI (15170) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (15190) TASK:: >>> END[0m
+[0;32mI (15500) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (15500) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (15500) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (15510) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (15520) TASK:: >>> START[0m
+[0;32mI (15530) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (15550) TASK:: >>> END[0m
+[0;32mI (15860) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (15860) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (15860) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (15870) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (15880) TASK:: >>> START[0m
+[0;32mI (15890) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (15910) TASK:: >>> END[0m
+[0;32mI (16220) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (16220) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (16220) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (16230) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (16240) TASK:: >>> START[0m
+[0;32mI (16250) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (16270) TASK:: >>> END[0m
+[0;32mI (16580) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (16580) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (16580) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (16590) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (16600) TASK:: >>> START[0m
+[0;32mI (16610) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (16630) TASK:: >>> END[0m
+[0;32mI (16940) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (16940) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (16940) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (16950) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (16960) TASK:: >>> START[0m
+[0;32mI (16970) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (16990) TASK:: >>> END[0m
+[0;32mI (17300) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (17300) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (17300) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (17310) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (17320) TASK:: >>> START[0m
+[0;32mI (17330) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (17350) TASK:: >>> END[0m
+[0;32mI (17660) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (17660) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (17660) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (17670) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (17680) TASK:: >>> START[0m
+[0;32mI (17690) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (17710) TASK:: >>> END[0m
+[0;32mI (18020) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (18020) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (18020) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (18030) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (18040) TASK:: >>> START[0m
+[0;32mI (18050) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (18070) TASK:: >>> END[0m
+[0;32mI (18380) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (18380) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (18380) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (18390) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (18400) TASK:: >>> START[0m
+[0;32mI (18410) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (18430) TASK:: >>> END[0m
+[0;32mI (18740) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (18740) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (18740) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (18750) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (18760) TASK:: >>> START[0m
+[0;32mI (18770) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (18790) TASK:: >>> END[0m
+[0;32mI (19100) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (19100) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (19100) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (19110) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (19120) TASK:: >>> START[0m
+[0;32mI (19130) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (19150) TASK:: >>> END[0m
+[0;32mI (19460) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (19460) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (19460) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (19470) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (19480) TASK:: >>> START[0m
+[0;32mI (19490) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (19510) TASK:: >>> END[0m
+[0;32mI (19820) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (19820) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (19820) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (19830) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (19840) TASK:: >>> START[0m
+[0;32mI (19850) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (19870) TASK:: >>> END[0m
+[0;32mI (20180) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (20180) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (20180) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (20190) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (20200) TASK:: >>> START[0m
+[0;32mI (20210) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (20230) TASK:: >>> END[0m
+[0;32mI (20540) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (20540) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (20540) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (20550) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (20560) TASK:: >>> START[0m
+[0;32mI (20570) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (20590) TASK:: >>> END[0m
+[0;32mI (20900) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (20900) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (20900) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (20910) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (20920) TASK:: >>> START[0m
+[0;32mI (20930) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (20950) TASK:: >>> END[0m
+[0;32mI (21260) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (21260) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (21260) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (21270) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (21280) TASK:: >>> START[0m
+[0;32mI (21290) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (21310) TASK:: >>> END[0m
+[0;32mI (21620) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (21620) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (21620) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (21630) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (21640) TASK:: >>> START[0m
+[0;32mI (21650) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (21670) TASK:: >>> END[0m
+[0;32mI (21980) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (21980) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (21980) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (21990) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (22000) TASK:: >>> START[0m
+[0;32mI (22010) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (22030) TASK:: >>> END[0m
+[0;32mI (22340) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (22340) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (22340) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (22350) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (22360) TASK:: >>> START[0m
+[0;32mI (22370) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (22390) TASK:: >>> END[0m
+[0;32mI (22700) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (22700) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (22700) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (22710) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (22720) TASK:: >>> START[0m
+[0;32mI (22730) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (22750) TASK:: >>> END[0m
+[0;32mI (23060) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (23060) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (23060) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (23070) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (23080) TASK:: >>> START[0m
+[0;32mI (23090) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (23110) TASK:: >>> END[0m
+[0;32mI (23420) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (23420) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (23420) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (23430) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (23440) TASK:: >>> START[0m
+[0;32mI (23450) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (23470) TASK:: >>> END[0m
+[0;32mI (23780) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (23780) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (23780) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (23790) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (23800) TASK:: >>> START[0m
+[0;32mI (23810) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (23830) TASK:: >>> END[0m
+[0;32mI (24140) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (24140) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (24140) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (24150) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (24160) TASK:: >>> START[0m
+[0;32mI (24170) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (24190) TASK:: >>> END[0m
+[0;32mI (24500) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (24500) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (24500) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (24510) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (24520) TASK:: >>> START[0m
+[0;32mI (24530) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (24550) TASK:: >>> END[0m
+[0;32mI (24860) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (24860) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (24860) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (24870) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (24880) TASK:: >>> START[0m
+[0;32mI (24890) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (24910) TASK:: >>> END[0m
+[0;32mI (25220) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (25220) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (25220) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (25230) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (25240) TASK:: >>> START[0m
+[0;32mI (25250) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (25270) TASK:: >>> END[0m
+[0;32mI (25580) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (25580) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (25580) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (25590) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (25600) TASK:: >>> START[0m
+[0;32mI (25610) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (25630) TASK:: >>> END[0m
+[0;32mI (25940) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (25940) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (25940) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (25950) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (25960) TASK:: >>> START[0m
+[0;32mI (25970) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (25990) TASK:: >>> END[0m
+[0;32mI (26300) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (26300) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (26300) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (26310) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (26320) TASK:: >>> START[0m
+[0;32mI (26330) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (26350) TASK:: >>> END[0m
+[0;32mI (26660) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (26660) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (26660) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (26670) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (26680) TASK:: >>> START[0m
+[0;32mI (26690) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (26710) TASK:: >>> END[0m
+[0;32mI (27020) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (27020) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (27020) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (27030) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (27040) TASK:: >>> START[0m
+[0;32mI (27050) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (27070) TASK:: >>> END[0m
+[0;32mI (27380) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (27380) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (27380) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (27390) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (27400) TASK:: >>> START[0m
+[0;32mI (27410) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (27430) TASK:: >>> END[0m
+[0;32mI (27740) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (27740) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (27740) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (27750) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (27760) TASK:: >>> START[0m
+[0;32mI (27770) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (27790) TASK:: >>> END[0m
+[0;32mI (28100) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (28100) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (28100) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (28110) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (28120) TASK:: >>> START[0m
+[0;32mI (28130) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (28150) TASK:: >>> END[0m
+[0;32mI (28460) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (28460) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (28460) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (28470) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (28480) TASK:: >>> START[0m
+[0;32mI (28490) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (28510) TASK:: >>> END[0m
+[0;32mI (28820) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (28820) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (28820) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (28830) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (28840) TASK:: >>> START[0m
+[0;32mI (28850) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (28870) TASK:: >>> END[0m
+[0;32mI (29180) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (29180) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (29180) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (29190) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (29200) TASK:: >>> START[0m
+[0;32mI (29210) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (29230) TASK:: >>> END[0m
+[0;32mI (29540) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (29540) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (29540) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (29550) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (29560) TASK:: >>> START[0m
+[0;32mI (29570) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (29590) TASK:: >>> END[0m
+[0;32mI (29900) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (29900) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (29900) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (29910) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (29920) TASK:: >>> START[0m
+[0;32mI (29930) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (29950) TASK:: >>> END[0m
+[0;32mI (30260) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (30260) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (30260) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (30270) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (30280) TASK:: >>> START[0m
+[0;32mI (30290) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (30310) TASK:: >>> END[0m
+[0;32mI (30620) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (30620) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (30620) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (30630) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (30640) TASK:: >>> START[0m
+[0;32mI (30650) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (30670) TASK:: >>> END[0m
+[0;32mI (30980) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (30980) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (30980) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (30990) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (31000) TASK:: >>> START[0m
+[0;32mI (31010) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (31030) TASK:: >>> END[0m
+[0;32mI (31340) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (31340) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (31340) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (31350) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (31360) TASK:: >>> START[0m
+[0;32mI (31370) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (31390) TASK:: >>> END[0m
+[0;32mI (31700) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (31700) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (31700) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (31710) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (31720) TASK:: >>> START[0m
+[0;32mI (31730) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (31750) TASK:: >>> END[0m
+[0;32mI (32060) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (32060) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (32060) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (32070) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (32080) TASK:: >>> START[0m
+[0;32mI (32090) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (32110) TASK:: >>> END[0m
+[0;32mI (32420) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (32420) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (32420) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (32430) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (32440) TASK:: >>> START[0m
+[0;32mI (32450) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (32470) TASK:: >>> END[0m
+[0;32mI (32780) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (32780) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (32780) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (32790) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (32800) TASK:: >>> START[0m
+[0;32mI (32810) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (32830) TASK:: >>> END[0m
+[0;32mI (33140) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (33140) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (33140) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (33150) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (33160) TASK:: >>> START[0m
+[0;32mI (33170) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (33190) TASK:: >>> END[0m
+[0;32mI (33500) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (33500) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (33500) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (33510) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (33520) TASK:: >>> START[0m
+[0;32mI (33530) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (33550) TASK:: >>> END[0m
+[0;32mI (33860) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (33860) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (33860) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (33870) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (33880) TASK:: >>> START[0m
+[0;32mI (33890) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (33910) TASK:: >>> END[0m
+[0;32mI (34220) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (34220) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (34220) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (34230) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (34240) TASK:: >>> START[0m
+[0;32mI (34250) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (34270) TASK:: >>> END[0m
+[0;32mI (34580) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (34580) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (34580) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (34590) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (34600) TASK:: >>> START[0m
+[0;32mI (34610) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (34630) TASK:: >>> END[0m
+[0;32mI (34940) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (34940) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (34940) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (34950) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (34960) TASK:: >>> START[0m
+[0;32mI (34970) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (34990) TASK:: >>> END[0m
+[0;32mI (35300) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (35300) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (35300) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (35310) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (35320) TASK:: >>> START[0m
+[0;32mI (35330) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (35350) TASK:: >>> END[0m
+[0;32mI (35660) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (35660) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (35660) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (35670) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (35680) TASK:: >>> START[0m
+[0;32mI (35690) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (35710) TASK:: >>> END[0m
+[0;32mI (36020) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (36020) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (36020) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (36030) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (36040) TASK:: >>> START[0m
+[0;32mI (36050) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (36070) TASK:: >>> END[0m
+[0;32mI (36380) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (36380) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (36380) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (36390) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (36400) TASK:: >>> START[0m
+[0;32mI (36410) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (36430) TASK:: >>> END[0m
+[0;32mI (36740) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (36740) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (36740) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (36750) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (36760) TASK:: >>> START[0m
+[0;32mI (36770) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (36790) TASK:: >>> END[0m
+[0;32mI (37100) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (37100) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (37100) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (37110) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (37120) TASK:: >>> START[0m
+[0;32mI (37130) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (37150) TASK:: >>> END[0m
+[0;32mI (37460) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (37460) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (37460) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (37470) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (37480) TASK:: >>> START[0m
+[0;32mI (37490) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (37510) TASK:: >>> END[0m
+[0;32mI (37820) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (37820) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (37820) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (37830) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (37840) TASK:: >>> START[0m
+[0;32mI (37850) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (37870) TASK:: >>> END[0m
+[0;32mI (38180) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (38180) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (38180) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (38190) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (38200) TASK:: >>> START[0m
+[0;32mI (38210) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (38230) TASK:: >>> END[0m
+[0;32mI (38540) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (38540) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (38540) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (38550) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (38560) TASK:: >>> START[0m
+[0;32mI (38570) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (38590) TASK:: >>> END[0m
+[0;32mI (38900) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (38900) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (38900) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (38910) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (38920) TASK:: >>> START[0m
+[0;32mI (38930) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (38950) TASK:: >>> END[0m
+[0;32mI (39260) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (39260) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (39260) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (39270) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (39280) TASK:: >>> START[0m
+[0;32mI (39290) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (39310) TASK:: >>> END[0m
+[0;32mI (39620) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (39620) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (39620) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (39630) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (39640) TASK:: >>> START[0m
+[0;32mI (39650) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (39670) TASK:: >>> END[0m
+[0;32mI (39980) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (39980) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (39980) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (39990) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (40000) TASK:: >>> START[0m
+[0;32mI (40010) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (40030) TASK:: >>> END[0m
+[0;32mI (40340) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (40340) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (40340) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (40350) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (40360) TASK:: >>> START[0m
+[0;32mI (40370) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (40390) TASK:: >>> END[0m
+[0;32mI (40700) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (40700) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (40700) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (40710) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (40720) TASK:: >>> START[0m
+[0;32mI (40730) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (40750) TASK:: >>> END[0m
+[0;32mI (41060) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (41060) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (41060) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (41070) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (41080) TASK:: >>> START[0m
+[0;32mI (41090) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (41110) TASK:: >>> END[0m
+[0;32mI (41420) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (41420) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (41420) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (41430) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (41440) TASK:: >>> START[0m
+[0;32mI (41450) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (41470) TASK:: >>> END[0m
+[0;32mI (41780) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (41780) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (41780) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (41790) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (41800) TASK:: >>> START[0m
+[0;32mI (41810) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (41830) TASK:: >>> END[0m
+[0;32mI (42140) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (42140) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (42140) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (42150) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (42160) TASK:: >>> START[0m
+[0;32mI (42170) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (42190) TASK:: >>> END[0m
+[0;32mI (42500) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (42500) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (42500) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (42510) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (42520) TASK:: >>> START[0m
+[0;32mI (42530) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (42550) TASK:: >>> END[0m
+[0;32mI (42860) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (42860) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (42860) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (42870) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (42880) TASK:: >>> START[0m
+[0;32mI (42890) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (42910) TASK:: >>> END[0m
+[0;32mI (43220) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (43220) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (43220) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (43230) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (43240) TASK:: >>> START[0m
+[0;32mI (43250) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (43270) TASK:: >>> END[0m
+[0;32mI (43580) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (43580) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (43580) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (43590) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (43600) TASK:: >>> START[0m
+[0;32mI (43610) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (43630) TASK:: >>> END[0m
+[0;32mI (43940) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (43940) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (43940) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (43950) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (43960) TASK:: >>> START[0m
+[0;32mI (43970) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (43990) TASK:: >>> END[0m
+[0;32mI (44300) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (44300) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (44300) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (44310) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (44320) TASK:: >>> START[0m
+[0;32mI (44330) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (44350) TASK:: >>> END[0m
+[0;32mI (44660) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (44660) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (44660) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (44670) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (44680) TASK:: >>> START[0m
+[0;32mI (44690) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (44710) TASK:: >>> END[0m
+[0;32mI (45020) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (45020) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (45020) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (45030) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (45040) TASK:: >>> START[0m
+[0;32mI (45050) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (45070) TASK:: >>> END[0m
+[0;32mI (45380) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (45380) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (45380) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (45390) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (45400) TASK:: >>> START[0m
+[0;32mI (45410) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (45430) TASK:: >>> END[0m
+[0;32mI (45740) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (45740) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (45740) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (45750) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (45760) TASK:: >>> START[0m
+[0;32mI (45770) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (45790) TASK:: >>> END[0m
+[0;32mI (46100) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (46100) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (46100) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (46110) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (46120) TASK:: >>> START[0m
+[0;32mI (46130) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (46150) TASK:: >>> END[0m
+[0;32mI (46460) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (46460) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (46460) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (46470) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (46480) TASK:: >>> START[0m
+[0;32mI (46490) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (46510) TASK:: >>> END[0m
+[0;32mI (46820) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (46820) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (46820) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (46830) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (46840) TASK:: >>> START[0m
+[0;32mI (46850) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (46870) TASK:: >>> END[0m
+[0;32mI (47180) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (47180) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (47180) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (47190) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (47200) TASK:: >>> START[0m
+[0;32mI (47210) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (47230) TASK:: >>> END[0m
+[0;32mI (47540) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (47540) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (47540) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (47550) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (47560) TASK:: >>> START[0m
+[0;32mI (47570) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (47590) TASK:: >>> END[0m
+[0;32mI (47900) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (47900) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (47900) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (47910) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (47920) TASK:: >>> START[0m
+[0;32mI (47930) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (47950) TASK:: >>> END[0m
+[0;32mI (48260) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (48260) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (48260) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (48270) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (48280) TASK:: >>> START[0m
+[0;32mI (48290) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (48310) TASK:: >>> END[0m
+[0;32mI (48620) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (48620) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (48620) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (48630) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (48640) TASK:: >>> START[0m
+[0;32mI (48650) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (48670) TASK:: >>> END[0m
+[0;32mI (48980) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (48980) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (48980) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (48990) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (49000) TASK:: >>> START[0m
+[0;32mI (49010) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (49030) TASK:: >>> END[0m
+[0;32mI (49340) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (49340) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (49340) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (49350) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (49360) TASK:: >>> START[0m
+[0;32mI (49370) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (49390) TASK:: >>> END[0m
+[0;32mI (49700) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (49700) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (49700) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (49710) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (49720) TASK:: >>> START[0m
+[0;32mI (49730) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (49750) TASK:: >>> END[0m
+[0;32mI (50060) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (50060) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (50060) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (50070) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (50080) TASK:: >>> START[0m
+[0;32mI (50090) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (50110) TASK:: >>> END[0m
+[0;32mI (50420) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (50420) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (50420) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (50430) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (50440) TASK:: >>> START[0m
+[0;32mI (50450) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (50470) TASK:: >>> END[0m
+[0;32mI (50780) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (50780) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (50780) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (50790) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (50800) TASK:: >>> START[0m
+[0;32mI (50810) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (50830) TASK:: >>> END[0m
+[0;32mI (51140) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (51140) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (51140) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (51150) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (51160) TASK:: >>> START[0m
+[0;32mI (51170) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (51190) TASK:: >>> END[0m
+[0;32mI (51500) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (51500) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (51500) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (51510) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (51520) TASK:: >>> START[0m
+[0;32mI (51530) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (51550) TASK:: >>> END[0m
+[0;32mI (51860) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (51860) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (51860) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (51870) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (51880) TASK:: >>> START[0m
+[0;32mI (51890) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (51910) TASK:: >>> END[0m
+[0;32mI (52220) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (52220) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (52220) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (52230) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (52240) TASK:: >>> START[0m
+[0;32mI (52250) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (52270) TASK:: >>> END[0m
+[0;32mI (52580) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (52580) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (52580) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (52590) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (52600) TASK:: >>> START[0m
+[0;32mI (52610) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (52630) TASK:: >>> END[0m
+[0;32mI (52940) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (52940) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (52940) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (52950) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (52960) TASK:: >>> START[0m
+[0;32mI (52970) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (52990) TASK:: >>> END[0m
+[0;32mI (53300) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (53300) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (53300) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (53310) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (53320) TASK:: >>> START[0m
+[0;32mI (53330) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (53350) TASK:: >>> END[0m
+[0;32mI (53660) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (53660) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (53660) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (53670) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (53680) TASK:: >>> START[0m
+[0;32mI (53690) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (53710) TASK:: >>> END[0m
+[0;32mI (54020) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (54020) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (54020) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (54030) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (54040) TASK:: >>> START[0m
+[0;32mI (54050) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (54070) TASK:: >>> END[0m
+[0;32mI (54380) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (54380) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (54380) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (54390) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (54400) TASK:: >>> START[0m
+[0;32mI (54410) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (54430) TASK:: >>> END[0m
+[0;32mI (54740) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (54740) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (54740) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (54750) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (54760) TASK:: >>> START[0m
+[0;32mI (54770) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (54790) TASK:: >>> END[0m
+[0;32mI (55100) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (55100) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (55100) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (55110) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (55120) TASK:: >>> START[0m
+[0;32mI (55130) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (55150) TASK:: >>> END[0m
+[0;32mI (55460) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (55460) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (55460) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (55470) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (55480) TASK:: >>> START[0m
+[0;32mI (55490) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (55510) TASK:: >>> END[0m
+[0;32mI (55820) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (55820) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (55820) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (55830) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (55840) TASK:: >>> START[0m
+[0;32mI (55850) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (55870) TASK:: >>> END[0m
+[0;32mI (56180) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (56180) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (56180) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (56190) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (56200) TASK:: >>> START[0m
+[0;32mI (56210) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (56230) TASK:: >>> END[0m
+[0;32mI (56540) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (56540) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (56540) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (56550) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (56560) TASK:: >>> START[0m
+[0;32mI (56570) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (56590) TASK:: >>> END[0m
+[0;32mI (56900) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (56900) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (56900) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (56910) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (56920) TASK:: >>> START[0m
+[0;32mI (56930) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (56950) TASK:: >>> END[0m
+[0;32mI (57260) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (57260) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (57260) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (57270) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (57280) TASK:: >>> START[0m
+[0;32mI (57290) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (57310) TASK:: >>> END[0m
+[0;32mI (57620) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (57620) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (57620) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (57630) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (57640) TASK:: >>> START[0m
+[0;32mI (57650) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (57670) TASK:: >>> END[0m
+[0;32mI (57980) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (57980) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (57980) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (57990) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (58000) TASK:: >>> START[0m
+[0;32mI (58010) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (58030) TASK:: >>> END[0m
+[0;32mI (58340) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (58340) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (58340) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (58350) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (58360) TASK:: >>> START[0m
+[0;32mI (58370) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (58390) TASK:: >>> END[0m
+[0;32mI (58700) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (58700) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (58700) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (58710) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (58720) TASK:: >>> START[0m
+[0;32mI (58730) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (58750) TASK:: >>> END[0m
+[0;32mI (59060) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (59060) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (59060) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (59070) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (59080) TASK:: >>> START[0m
+[0;32mI (59090) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (59110) TASK:: >>> END[0m
+[0;32mI (59420) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (59420) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (59420) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (59430) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (59440) TASK:: >>> START[0m
+[0;32mI (59450) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (59470) TASK:: >>> END[0m
+[0;32mI (59780) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (59780) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (59780) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (59790) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (59800) TASK:: >>> START[0m
+[0;32mI (59810) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (59830) TASK:: >>> END[0m
+[0;32mI (60140) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (60140) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (60140) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (60150) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (60160) TASK:: >>> START[0m
+[0;32mI (60170) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (60190) TASK:: >>> END[0m
+[0;32mI (60500) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (60500) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (60500) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (60510) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (60520) TASK:: >>> START[0m
+[0;32mI (60530) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (60550) TASK:: >>> END[0m
+[0;32mI (60860) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (60860) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (60860) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (60870) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (60880) TASK:: >>> START[0m
+[0;32mI (60890) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (60910) TASK:: >>> END[0m
+[0;32mI (61220) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (61220) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (61220) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (61230) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (61240) TASK:: >>> START[0m
+[0;32mI (61250) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (61270) TASK:: >>> END[0m
+[0;32mI (61580) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (61580) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (61580) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (61590) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (61600) TASK:: >>> START[0m
+[0;32mI (61610) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (61630) TASK:: >>> END[0m
+[0;32mI (61940) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (61940) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (61940) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (61950) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (61960) TASK:: >>> START[0m
+[0;32mI (61970) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (61990) TASK:: >>> END[0m
+[0;32mI (62300) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (62300) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (62300) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (62310) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (62320) TASK:: >>> START[0m
+[0;32mI (62330) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (62350) TASK:: >>> END[0m
+[0;32mI (62660) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (62660) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (62660) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (62670) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (62680) TASK:: >>> START[0m
+[0;32mI (62690) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (62710) TASK:: >>> END[0m
+[0;32mI (63020) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (63020) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (63020) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (63030) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (63040) TASK:: >>> START[0m
+[0;32mI (63050) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (63070) TASK:: >>> END[0m
+[0;32mI (63380) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (63380) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (63380) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (63390) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (63400) TASK:: >>> START[0m
+[0;32mI (63410) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (63430) TASK:: >>> END[0m
+[0;32mI (63740) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (63740) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (63740) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (63750) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (63760) TASK:: >>> START[0m
+[0;32mI (63770) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (63790) TASK:: >>> END[0m
+[0;32mI (64100) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (64100) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (64100) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (64110) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (64120) TASK:: >>> START[0m
+[0;32mI (64130) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (64150) TASK:: >>> END[0m
+[0;32mI (64460) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (64460) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (64460) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (64470) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (64480) TASK:: >>> START[0m
+[0;32mI (64490) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (64510) TASK:: >>> END[0m
+[0;32mI (64820) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (64820) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (64820) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (64830) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (64840) TASK:: >>> START[0m
+[0;32mI (64850) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (64870) TASK:: >>> END[0m
+[0;32mI (65180) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (65180) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (65180) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (65190) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (65200) TASK:: >>> START[0m
+[0;32mI (65210) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (65230) TASK:: >>> END[0m
+[0;32mI (65540) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (65540) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (65540) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (65550) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (65560) TASK:: >>> START[0m
+[0;32mI (65570) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (65590) TASK:: >>> END[0m
+[0;32mI (65900) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (65900) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (65900) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (65910) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (65920) TASK:: >>> START[0m
+[0;32mI (65930) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (65950) TASK:: >>> END[0m
+[0;32mI (66260) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (66260) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (66260) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (66270) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (66280) TASK:: >>> START[0m
+[0;32mI (66290) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (66310) TASK:: >>> END[0m
+[0;32mI (66620) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (66620) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (66620) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (66630) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (66640) TASK:: >>> START[0m
+[0;32mI (66650) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (66670) TASK:: >>> END[0m
+[0;32mI (66980) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (66980) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (66980) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (66990) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (67000) TASK:: >>> START[0m
+[0;32mI (67010) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (67030) TASK:: >>> END[0m
+[0;32mI (67340) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (67340) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (67340) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (67350) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (67360) TASK:: >>> START[0m
+[0;32mI (67370) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (67390) TASK:: >>> END[0m
+[0;32mI (67700) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (67700) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (67700) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (67710) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (67720) TASK:: >>> START[0m
+[0;32mI (67730) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (67750) TASK:: >>> END[0m
+[0;32mI (68060) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (68060) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (68060) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (68070) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (68080) TASK:: >>> START[0m
+[0;32mI (68090) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (68110) TASK:: >>> END[0m
+[0;32mI (68420) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (68420) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (68420) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (68430) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (68440) TASK:: >>> START[0m
+[0;32mI (68450) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (68470) TASK:: >>> END[0m
+[0;32mI (68780) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (68780) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (68780) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (68790) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (68800) TASK:: >>> START[0m
+[0;32mI (68810) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (68830) TASK:: >>> END[0m
+[0;32mI (69140) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (69140) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (69140) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (69150) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (69160) TASK:: >>> START[0m
+[0;32mI (69170) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (69190) TASK:: >>> END[0m
+[0;32mI (69500) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (69500) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (69500) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (69510) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (69520) TASK:: >>> START[0m
+[0;32mI (69530) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (69550) TASK:: >>> END[0m
+[0;32mI (69860) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (69860) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (69860) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (69870) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (69880) TASK:: >>> START[0m
+[0;32mI (69890) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (69910) TASK:: >>> END[0m
+[0;32mI (70220) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (70220) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (70220) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (70230) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (70240) TASK:: >>> START[0m
+[0;32mI (70250) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (70270) TASK:: >>> END[0m
+[0;32mI (70580) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (70580) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (70580) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (70590) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (70600) TASK:: >>> START[0m
+[0;32mI (70610) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (70630) TASK:: >>> END[0m
+[0;32mI (70940) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (70940) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (70940) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (70950) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (70960) TASK:: >>> START[0m
+[0;32mI (70970) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (70990) TASK:: >>> END[0m
+[0;32mI (71300) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (71300) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (71300) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (71310) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (71320) TASK:: >>> START[0m
+[0;32mI (71330) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (71350) TASK:: >>> END[0m
+[0;32mI (71660) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (71660) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (71660) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (71670) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (71680) TASK:: >>> START[0m
+[0;32mI (71690) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (71710) TASK:: >>> END[0m
+[0;32mI (72020) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (72020) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (72020) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (72030) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (72040) TASK:: >>> START[0m
+[0;32mI (72050) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (72070) TASK:: >>> END[0m
+[0;32mI (72380) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (72380) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (72380) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (72390) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (72400) TASK:: >>> START[0m
+[0;32mI (72410) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (72430) TASK:: >>> END[0m
+[0;32mI (72740) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (72740) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (72740) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (72750) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (72760) TASK:: >>> START[0m
+[0;32mI (72770) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (72790) TASK:: >>> END[0m
+[0;32mI (73100) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (73100) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (73100) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (73110) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (73120) TASK:: >>> START[0m
+[0;32mI (73130) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (73150) TASK:: >>> END[0m
+[0;32mI (73460) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (73460) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (73460) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (73470) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (73480) TASK:: >>> START[0m
+[0;32mI (73490) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (73510) TASK:: >>> END[0m
+[0;32mI (73820) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (73820) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (73820) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (73830) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (73840) TASK:: >>> START[0m
+[0;32mI (73850) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (73870) TASK:: >>> END[0m
+[0;32mI (74180) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (74180) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (74180) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (74190) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (74200) TASK:: >>> START[0m
+[0;32mI (74210) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (74230) TASK:: >>> END[0m
+[0;32mI (74540) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (74540) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (74540) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (74550) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (74560) TASK:: >>> START[0m
+[0;32mI (74570) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (74590) TASK:: >>> END[0m
+[0;32mI (74900) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (74900) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (74900) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (74910) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (74920) TASK:: >>> START[0m
+[0;32mI (74930) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (74950) TASK:: >>> END[0m
+[0;32mI (75260) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (75260) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (75260) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (75270) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (75280) TASK:: >>> START[0m
+[0;32mI (75290) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (75310) TASK:: >>> END[0m
+[0;32mI (75620) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (75620) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (75620) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (75630) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (75640) TASK:: >>> START[0m
+[0;32mI (75650) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (75670) TASK:: >>> END[0m
+[0;32mI (75980) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (75980) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (75980) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (75990) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (76000) TASK:: >>> START[0m
+[0;32mI (76010) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (76030) TASK:: >>> END[0m
+[0;32mI (76340) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (76340) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (76340) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (76350) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (76360) TASK:: >>> START[0m
+[0;32mI (76370) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (76390) TASK:: >>> END[0m
+[0;32mI (76700) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (76700) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (76700) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (76710) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (76720) TASK:: >>> START[0m
+[0;32mI (76730) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (76750) TASK:: >>> END[0m
+[0;32mI (77060) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (77060) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (77060) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (77070) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (77080) TASK:: >>> START[0m
+[0;32mI (77090) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (77110) TASK:: >>> END[0m
+[0;32mI (77420) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (77420) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (77420) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (77430) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (77440) TASK:: >>> START[0m
+[0;32mI (77450) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (77470) TASK:: >>> END[0m
+[0;32mI (77780) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (77780) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (77780) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (77790) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (77800) TASK:: >>> START[0m
+[0;32mI (77810) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (77830) TASK:: >>> END[0m
+[0;32mI (78140) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (78140) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (78140) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (78150) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (78160) TASK:: >>> START[0m
+[0;32mI (78170) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (78190) TASK:: >>> END[0m
+[0;32mI (78500) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (78500) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (78500) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (78510) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (78520) TASK:: >>> START[0m
+[0;32mI (78530) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (78550) TASK:: >>> END[0m
+[0;32mI (78860) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (78860) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (78860) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (78870) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (78880) TASK:: >>> START[0m
+[0;32mI (78890) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (78910) TASK:: >>> END[0m
+[0;32mI (79220) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (79220) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (79220) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (79230) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (79240) TASK:: >>> START[0m
+[0;32mI (79250) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (79270) TASK:: >>> END[0m
+[0;32mI (79580) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (79580) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (79580) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (79590) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (79600) TASK:: >>> START[0m
+[0;32mI (79610) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (79630) TASK:: >>> END[0m
+[0;32mI (79940) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (79940) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (79940) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (79950) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (79960) TASK:: >>> START[0m
+[0;32mI (79970) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (79990) TASK:: >>> END[0m
+[0;32mI (80300) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (80300) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (80300) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (80310) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (80320) TASK:: >>> START[0m
+[0;32mI (80330) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (80350) TASK:: >>> END[0m
+[0;32mI (80660) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (80660) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (80660) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (80670) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (80680) TASK:: >>> START[0m
+[0;32mI (80690) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (80710) TASK:: >>> END[0m
+[0;32mI (81020) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (81020) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (81020) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (81030) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (81040) TASK:: >>> START[0m
+[0;32mI (81050) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (81070) TASK:: >>> END[0m
+[0;32mI (81380) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (81380) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (81380) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (81390) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (81400) TASK:: >>> START[0m
+[0;32mI (81410) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (81430) TASK:: >>> END[0m
+[0;32mI (81740) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (81740) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (81740) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (81750) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (81760) TASK:: >>> START[0m
+[0;32mI (81770) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (81790) TASK:: >>> END[0m
+[0;32mI (82100) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (82100) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (82100) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (82110) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (82120) TASK:: >>> START[0m
+[0;32mI (82130) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (82150) TASK:: >>> END[0m
+[0;32mI (82460) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (82460) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (82460) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (82470) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (82480) TASK:: >>> START[0m
+[0;32mI (82490) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (82510) TASK:: >>> END[0m
+[0;32mI (82820) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (82820) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (82820) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (82830) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (82840) TASK:: >>> START[0m
+[0;32mI (82850) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (82870) TASK:: >>> END[0m
+[0;32mI (83180) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (83180) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (83180) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (83190) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (83200) TASK:: >>> START[0m
+[0;32mI (83210) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (83230) TASK:: >>> END[0m
+[0;32mI (83540) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (83540) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (83540) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (83550) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (83560) TASK:: >>> START[0m
+[0;32mI (83570) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (83590) TASK:: >>> END[0m
+[0;32mI (83900) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (83900) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (83900) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (83910) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (83920) TASK:: >>> START[0m
+[0;32mI (83930) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (83950) TASK:: >>> END[0m
+[0;32mI (84260) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (84260) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (84260) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (84270) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (84280) TASK:: >>> START[0m
+[0;32mI (84290) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (84310) TASK:: >>> END[0m
+[0;32mI (84620) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (84620) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (84620) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (84630) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (84640) TASK:: >>> START[0m
+[0;32mI (84650) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (84670) TASK:: >>> END[0m
+[0;32mI (84980) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (84980) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (84980) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (84990) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (85000) TASK:: >>> START[0m
+[0;32mI (85010) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (85030) TASK:: >>> END[0m
+[0;32mI (85340) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (85340) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (85340) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (85350) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (85360) TASK:: >>> START[0m
+[0;32mI (85370) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (85390) TASK:: >>> END[0m
+[0;32mI (85700) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (85700) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (85700) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (85710) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (85720) TASK:: >>> START[0m
+[0;32mI (85730) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (85750) TASK:: >>> END[0m
+[0;32mI (86060) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (86060) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (86060) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (86070) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (86080) TASK:: >>> START[0m
+[0;32mI (86090) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (86110) TASK:: >>> END[0m
+[0;32mI (86420) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (86420) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (86420) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (86430) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (86440) TASK:: >>> START[0m
+[0;32mI (86450) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (86470) TASK:: >>> END[0m
+[0;32mI (86780) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (86780) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (86780) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (86790) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (86800) TASK:: >>> START[0m
+[0;32mI (86810) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (86830) TASK:: >>> END[0m
+[0;32mI (87140) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (87140) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (87140) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (87150) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (87160) TASK:: >>> START[0m
+[0;32mI (87170) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (87190) TASK:: >>> END[0m
+[0;32mI (87500) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (87500) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (87500) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (87510) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (87520) TASK:: >>> START[0m
+[0;32mI (87530) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (87550) TASK:: >>> END[0m
+[0;32mI (87860) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (87860) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (87860) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (87870) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (87880) TASK:: >>> START[0m
+[0;32mI (87890) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (87910) TASK:: >>> END[0m
+[0;32mI (88220) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (88220) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (88220) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (88230) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (88240) TASK:: >>> START[0m
+[0;32mI (88250) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (88270) TASK:: >>> END[0m
+[0;32mI (88580) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (88580) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (88580) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (88590) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (88600) TASK:: >>> START[0m
+[0;32mI (88610) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (88630) TASK:: >>> END[0m
+[0;32mI (88940) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (88940) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (88940) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (88950) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (88960) TASK:: >>> START[0m
+[0;32mI (88970) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (88990) TASK:: >>> END[0m
+[0;32mI (89300) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (89300) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (89300) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (89310) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (89320) TASK:: >>> START[0m
+[0;32mI (89330) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (89350) TASK:: >>> END[0m
+[0;32mI (89660) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (89660) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (89660) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (89670) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (89680) TASK:: >>> START[0m
+[0;32mI (89690) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (89710) TASK:: >>> END[0m
+[0;32mI (90020) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (90020) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (90020) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (90030) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (90040) TASK:: >>> START[0m
+[0;32mI (90050) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (90070) TASK:: >>> END[0m
+[0;32mI (90380) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (90380) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (90380) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (90390) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (90400) TASK:: >>> START[0m
+[0;32mI (90410) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (90430) TASK:: >>> END[0m
+[0;32mI (90740) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (90740) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (90740) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (90750) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (90760) TASK:: >>> START[0m
+[0;32mI (90770) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (90790) TASK:: >>> END[0m
+[0;32mI (91100) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (91100) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (91100) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (91110) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (91120) TASK:: >>> START[0m
+[0;32mI (91130) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (91150) TASK:: >>> END[0m
+[0;32mI (91460) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (91460) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (91460) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (91470) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (91480) TASK:: >>> START[0m
+[0;32mI (91490) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (91510) TASK:: >>> END[0m
+[0;32mI (91820) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (91820) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (91820) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (91830) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (91840) TASK:: >>> START[0m
+[0;32mI (91850) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (91870) TASK:: >>> END[0m
+[0;32mI (92180) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (92180) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (92180) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (92190) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (92200) TASK:: >>> START[0m
+[0;32mI (92210) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (92230) TASK:: >>> END[0m
+[0;32mI (92540) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (92540) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (92540) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (92550) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (92560) TASK:: >>> START[0m
+[0;32mI (92570) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (92590) TASK:: >>> END[0m
+[0;32mI (92900) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (92900) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (92900) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (92910) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (92920) TASK:: >>> START[0m
+[0;32mI (92930) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (92950) TASK:: >>> END[0m
+[0;32mI (93260) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (93260) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (93260) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (93270) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (93280) TASK:: >>> START[0m
+[0;32mI (93290) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (93310) TASK:: >>> END[0m
+[0;32mI (93620) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (93620) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (93620) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (93630) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (93640) TASK:: >>> START[0m
+[0;32mI (93650) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (93670) TASK:: >>> END[0m
+[0;32mI (93980) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (93980) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (93980) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (93990) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (94000) TASK:: >>> START[0m
+[0;32mI (94010) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (94030) TASK:: >>> END[0m
+[0;32mI (94340) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (94340) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (94340) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (94350) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (94360) TASK:: >>> START[0m
+[0;32mI (94370) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (94390) TASK:: >>> END[0m
+[0;32mI (94700) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (94700) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (94700) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (94710) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (94720) TASK:: >>> START[0m
+[0;32mI (94730) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (94750) TASK:: >>> END[0m
+[0;32mI (95060) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (95060) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (95060) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (95070) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (95080) TASK:: >>> START[0m
+[0;32mI (95090) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (95110) TASK:: >>> END[0m
+[0;32mI (95420) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (95420) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (95420) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (95430) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (95440) TASK:: >>> START[0m
+[0;32mI (95450) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (95470) TASK:: >>> END[0m
+[0;32mI (95780) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (95780) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (95780) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (95790) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (95800) TASK:: >>> START[0m
+[0;32mI (95810) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (95830) TASK:: >>> END[0m
+[0;32mI (96140) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (96140) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (96140) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (96150) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (96160) TASK:: >>> START[0m
+[0;32mI (96170) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (96190) TASK:: >>> END[0m
+[0;32mI (96500) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (96500) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (96500) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (96510) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (96520) TASK:: >>> START[0m
+[0;32mI (96530) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (96550) TASK:: >>> END[0m
+[0;32mI (96860) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (96860) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (96860) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (96870) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (96880) TASK:: >>> START[0m
+[0;32mI (96890) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (96910) TASK:: >>> END[0m
+[0;32mI (97220) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (97220) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (97220) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (97230) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (97240) TASK:: >>> START[0m
+[0;32mI (97250) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (97270) TASK:: >>> END[0m
+[0;32mI (97580) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (97580) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (97580) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (97590) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (97600) TASK:: >>> START[0m
+[0;32mI (97610) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (97630) TASK:: >>> END[0m
+[0;32mI (97940) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (97940) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (97940) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (97950) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (97960) TASK:: >>> START[0m
+[0;32mI (97970) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (97990) TASK:: >>> END[0m
+[0;32mI (98300) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (98300) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (98300) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (98310) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (98320) TASK:: >>> START[0m
+[0;32mI (98330) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (98350) TASK:: >>> END[0m
+[0;32mI (98660) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (98660) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (98660) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (98670) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (98680) TASK:: >>> START[0m
+[0;32mI (98690) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (98710) TASK:: >>> END[0m
+[0;32mI (99020) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (99020) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (99020) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (99030) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (99040) TASK:: >>> START[0m
+[0;32mI (99050) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (99070) TASK:: >>> END[0m
+[0;32mI (99380) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (99380) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (99380) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (99390) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (99400) TASK:: >>> START[0m
+[0;32mI (99410) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (99430) TASK:: >>> END[0m
+[0;32mI (99740) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (99740) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (99740) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (99750) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (99760) TASK:: >>> START[0m
+[0;32mI (99770) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (99790) TASK:: >>> END[0m
+[0;32mI (100100) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (100100) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (100100) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (100110) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (100120) TASK:: >>> START[0m
+[0;32mI (100130) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (100150) TASK:: >>> END[0m
+[0;32mI (100460) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (100460) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (100460) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (100470) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (100480) TASK:: >>> START[0m
+[0;32mI (100490) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (100510) TASK:: >>> END[0m
+[0;32mI (100820) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (100820) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (100820) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (100830) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (100840) TASK:: >>> START[0m
+[0;32mI (100850) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (100870) TASK:: >>> END[0m
+[0;32mI (101180) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (101180) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (101180) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (101190) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (101200) TASK:: >>> START[0m
+[0;32mI (101210) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (101230) TASK:: >>> END[0m
+[0;32mI (101540) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (101540) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (101540) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (101550) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (101560) TASK:: >>> START[0m
+[0;32mI (101570) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (101590) TASK:: >>> END[0m
+[0;32mI (101900) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (101900) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (101900) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (101910) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (101920) TASK:: >>> START[0m
+[0;32mI (101930) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (101950) TASK:: >>> END[0m
+[0;32mI (102260) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (102260) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (102260) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (102270) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (102280) TASK:: >>> START[0m
+[0;32mI (102290) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (102310) TASK:: >>> END[0m
+[0;32mI (102620) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (102620) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (102620) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (102630) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (102640) TASK:: >>> START[0m
+[0;32mI (102650) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (102670) TASK:: >>> END[0m
+[0;32mI (102980) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (102980) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (102980) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (102990) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (103000) TASK:: >>> START[0m
+[0;32mI (103010) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (103030) TASK:: >>> END[0m
+[0;32mI (103340) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (103340) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (103340) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (103350) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (103360) TASK:: >>> START[0m
+[0;32mI (103370) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (103390) TASK:: >>> END[0m
+[0;32mI (103700) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (103700) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (103700) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (103710) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (103720) TASK:: >>> START[0m
+[0;32mI (103730) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (103750) TASK:: >>> END[0m
+[0;32mI (104060) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (104060) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (104060) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (104070) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (104080) TASK:: >>> START[0m
+[0;32mI (104090) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (104110) TASK:: >>> END[0m
+[0;32mI (104420) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (104420) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (104420) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (104430) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (104440) TASK:: >>> START[0m
+[0;32mI (104450) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (104470) TASK:: >>> END[0m
+[0;32mI (104780) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (104780) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (104780) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (104790) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (104800) TASK:: >>> START[0m
+[0;32mI (104810) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (104830) TASK:: >>> END[0m
+[0;32mI (105140) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (105140) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (105140) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (105150) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (105160) TASK:: >>> START[0m
+[0;32mI (105170) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (105190) TASK:: >>> END[0m
+[0;32mI (105500) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (105500) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (105500) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (105510) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (105520) TASK:: >>> START[0m
+[0;32mI (105530) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (105550) TASK:: >>> END[0m
+[0;32mI (105860) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (105860) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (105860) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (105870) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (105880) TASK:: >>> START[0m
+[0;32mI (105890) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (105910) TASK:: >>> END[0m
+[0;32mI (106220) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (106220) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (106220) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (106230) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (106240) TASK:: >>> START[0m
+[0;32mI (106250) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (106270) TASK:: >>> END[0m
+[0;32mI (106580) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (106580) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (106580) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (106590) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (106600) TASK:: >>> START[0m
+[0;32mI (106610) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (106630) TASK:: >>> END[0m
+[0;32mI (106940) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (106940) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (106940) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (106950) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (106960) TASK:: >>> START[0m
+[0;32mI (106970) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (106990) TASK:: >>> END[0m
+[0;32mI (107300) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (107300) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (107300) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (107310) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (107320) TASK:: >>> START[0m
+[0;32mI (107330) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (107350) TASK:: >>> END[0m
+[0;32mI (107660) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (107660) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (107660) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (107670) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (107680) TASK:: >>> START[0m
+[0;32mI (107690) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (107710) TASK:: >>> END[0m
+[0;32mI (108020) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (108020) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (108020) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (108030) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (108040) TASK:: >>> START[0m
+[0;32mI (108050) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (108070) TASK:: >>> END[0m
+[0;32mI (108380) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (108380) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (108380) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (108390) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (108400) TASK:: >>> START[0m
+[0;32mI (108410) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (108430) TASK:: >>> END[0m
+[0;32mI (108740) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (108740) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (108740) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (108750) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (108760) TASK:: >>> START[0m
+[0;32mI (108770) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (108790) TASK:: >>> END[0m
+[0;32mI (109100) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (109100) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (109100) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (109110) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (109120) TASK:: >>> START[0m
+[0;32mI (109130) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (109150) TASK:: >>> END[0m
+[0;32mI (109460) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (109460) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (109460) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (109470) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (109480) TASK:: >>> START[0m
+[0;32mI (109490) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (109510) TASK:: >>> END[0m
+[0;32mI (109820) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (109820) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (109820) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (109830) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (109840) TASK:: >>> START[0m
+[0;32mI (109850) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (109870) TASK:: >>> END[0m
+[0;32mI (110180) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (110180) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (110180) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (110190) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (110200) TASK:: >>> START[0m
+[0;32mI (110210) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (110230) TASK:: >>> END[0m
+[0;32mI (110540) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (110540) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (110540) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (110550) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (110560) TASK:: >>> START[0m
+[0;32mI (110570) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (110590) TASK:: >>> END[0m
+[0;32mI (110900) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (110900) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (110900) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (110910) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (110920) TASK:: >>> START[0m
+[0;32mI (110930) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (110950) TASK:: >>> END[0m
+[0;32mI (111260) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (111260) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (111260) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (111270) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (111280) TASK:: >>> START[0m
+[0;32mI (111290) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (111310) TASK:: >>> END[0m
+[0;32mI (111620) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (111620) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (111620) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (111630) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (111640) TASK:: >>> START[0m
+[0;32mI (111650) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (111670) TASK:: >>> END[0m
+[0;32mI (111980) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (111980) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (111980) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (111990) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (112000) TASK:: >>> START[0m
+[0;32mI (112010) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (112030) TASK:: >>> END[0m
+[0;32mI (112340) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (112340) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (112340) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (112350) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (112360) TASK:: >>> START[0m
+[0;32mI (112370) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (112390) TASK:: >>> END[0m
+[0;32mI (112700) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (112700) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (112700) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (112710) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (112720) TASK:: >>> START[0m
+[0;32mI (112730) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (112750) TASK:: >>> END[0m
+[0;32mI (113060) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (113060) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (113060) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (113070) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (113080) TASK:: >>> START[0m
+[0;32mI (113090) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (113110) TASK:: >>> END[0m
+[0;32mI (113420) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (113420) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (113420) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (113430) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (113440) TASK:: >>> START[0m
+[0;32mI (113450) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (113470) TASK:: >>> END[0m
+[0;32mI (113780) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (113780) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (113780) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (113790) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (113800) TASK:: >>> START[0m
+[0;32mI (113810) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (113830) TASK:: >>> END[0m
+[0;32mI (114140) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (114140) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (114140) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (114150) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (114160) TASK:: >>> START[0m
+[0;32mI (114170) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (114190) TASK:: >>> END[0m
+[0;32mI (114500) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (114500) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (114500) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (114510) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (114520) TASK:: >>> START[0m
+[0;32mI (114530) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (114550) TASK:: >>> END[0m
+[0;32mI (114860) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (114860) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (114860) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (114870) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (114880) TASK:: >>> START[0m
+[0;32mI (114890) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (114910) TASK:: >>> END[0m
+[0;32mI (115220) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (115220) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (115220) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (115230) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (115240) TASK:: >>> START[0m
+[0;32mI (115250) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (115270) TASK:: >>> END[0m
+[0;32mI (115580) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (115580) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (115580) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (115590) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (115600) TASK:: >>> START[0m
+[0;32mI (115610) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (115630) TASK:: >>> END[0m
+[0;32mI (115940) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (115940) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (115940) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (115950) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (115960) TASK:: >>> START[0m
+[0;32mI (115970) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (115990) TASK:: >>> END[0m
+[0;32mI (116300) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (116300) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (116300) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (116310) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (116320) TASK:: >>> START[0m
+[0;32mI (116330) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (116350) TASK:: >>> END[0m
+[0;32mI (116660) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (116660) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (116660) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (116670) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (116680) TASK:: >>> START[0m
+[0;32mI (116690) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (116710) TASK:: >>> END[0m
+[0;32mI (117020) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (117020) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (117020) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (117030) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (117040) TASK:: >>> START[0m
+[0;32mI (117050) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (117070) TASK:: >>> END[0m
+[0;32mI (117380) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (117380) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (117380) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (117390) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (117400) TASK:: >>> START[0m
+[0;32mI (117410) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (117430) TASK:: >>> END[0m
+[0;32mI (117740) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (117740) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (117740) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (117750) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (117760) TASK:: >>> START[0m
+[0;32mI (117770) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (117790) TASK:: >>> END[0m
+[0;32mI (118100) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (118100) ADC: adc_pattern[0].atten is :0[0m
+[0;32mI (118100) ADC: adc_pattern[0].channel is :7[0m
+[0;32mI (118110) ADC: adc_pattern[0].unit is :0[0m
+TIMES=1024  sample_freq_hz= 2000000
+[0;32mI (118120) TASK:: >>> START[0m
+[0;32mI (118130) TASK:: ret is 103, ret_num is 1024[0m
+[0;32mI (118150) TASK:: >>> END[0m

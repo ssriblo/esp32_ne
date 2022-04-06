@@ -12,11 +12,16 @@
 
 #include "defines.h"
 #include "adc.h"
+#include "rmt.h"
+#include "dac.h"
+#include "pwm.h"
 
 static const char *TAG = "NewEcho";
 
 void loop(){
-    init();
+    initRmt();
+    dac_init();
+    pwm_init();
    
     while (1)
     {

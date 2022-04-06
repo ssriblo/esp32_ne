@@ -74,11 +74,6 @@ static void continuous_adc_init(uint16_t adc1_chan_mask, uint16_t adc2_chan_mask
 
 }
 
-void init(){
-    initRmt();
-    dac_init();
-
-}
 ///////////////////////////////////////////////////////////////////////////////
 void IRAM_ATTR start_adc_rmt_dac()
 {
@@ -87,7 +82,7 @@ void IRAM_ATTR start_adc_rmt_dac()
     uint8_t result[TIMES] = {0};
     memset(result, 0xcc, TIMES);
     
-    adc_channel_t channel[1] = {ADC1_CHANNEL_7};
+    adc_channel_t channel[1] = {ADC_ECHO_INPUT};
     continuous_adc_init(ADC1_CHAN_MASK, ADC2_CHAN_MASK, channel, sizeof(channel) / sizeof(adc_channel_t));
 
     ESP_LOGI("TASK:", ">>> START");

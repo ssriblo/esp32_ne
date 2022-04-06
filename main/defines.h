@@ -11,6 +11,7 @@ ToDo:
     - ADC shift, levels, profile
     - Disable all interrupt and Freertos task switch - tried to do but rebooing...
     - Setup proper 4 pulses at RMT module
+    - Add PWM and ADC for minus 5V/40V
 
 ******************************************************************************/
 
@@ -27,19 +28,19 @@ ToDo:
 Hardware pin's setup:
     GPIO21 - Transmitter Channel A
     GPIO22 - Transmitter Channel B
-    GPIO35 - Echo ADC input
+    GPIO35 - Echo ADC input (ADC1_CHANNEL_7)
     GPIOxx - DAC ouptut
     pin - UART Tx - depends from current breadboard 
     pin - UART Rx - depends from current breadboard 
-    pin TBD - minus 5V ADC input
-    pin TBD - 40V ADC input
-    pin TBD - minus 5V pulse gen 
-    pin TBD - 40V pulse gen
+    GPIO34 - minus 5V ADC input (ADC1_CHANNEL_6)
+    GPIO39 - 40V ADC input (ADC1_CHANNEL_3)
+    GPIO16 - minus 5V pulse gen 
+    GPIO17 - 40V pulse gen
 
 ******************************************************************************/
 
 /****************************************************************/
-#define BUILD_VERSION       "Build Version: 0.2 "
+#define BUILD_VERSION       "Build Version: 0.3 "
 /****************************************************************/
 
 //////////////////////////////////////////////////////////////////////////////
@@ -51,6 +52,10 @@ Hardware pin's setup:
 
 #define TIMES              1024 //256
 #define GET_UNIT(x)        ((x>>3) & 0x1)
+
+#define ADC_ECHO_INPUT      ADC1_CHANNEL_7 /* pin GPIO35 */
+#define ADC_MINUS_5V_INPUT  ADC1_CHANNEL_6 /* pin GPIO35 */
+#define ADC_40V_INPUT       ADC1_CHANNEL_3 /* pin GPIO35 */
 
 #define ADC_RESULT_BYTE     2
 #define ADC_CONV_LIMIT_EN   1                       //For ESP32, this should always be set to 1
@@ -64,5 +69,16 @@ Hardware pin's setup:
 
 #define ADC1_CHAN_MASK      BIT(7)
 #define ADC2_CHAN_MASK      0  
+
+#define LEDC_TIMER              LEDC_TIMER_0
+#define LEDC_MODE               LEDC_LOW_SPEED_MODE
+#define LEDC_OUTPUT_MINUS_5V    (16) // TBD
+#define LEDC_OUTPUT_40V         (16) // TBD
+#define LEDC_CHANNEL_MINUS_5V   LEDC_CHANNEL_0
+#define LEDC_CHANNEL_40V        LEDC_CHANNEL_1
+#define LEDC_DUTY_RES           LEDC_TIMER_13_BIT // Set duty resolution to 13 bits
+#define LEDC_DUTY_MINUS_5V      (4095) // Set duty to 50%. ((2 ** 13) - 1) * 50% = 4095
+#define LEDC_DUTY_40V           (4095) // Set duty to 50%. ((2 ** 13) - 1) * 50% = 4095
+#define LEDC_FREQUENCY          (5000) // Frequency in Hertz. Set frequency at 5 kHz
 
 #endif
