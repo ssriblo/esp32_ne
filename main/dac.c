@@ -10,7 +10,7 @@
 #include "driver/timer.h"
 #include "esp_log.h"
 #include "hal/dac_ll.h"
-#include "hal/misc.h"
+//#include "hal/misc.h"
 #include "soc/sens_struct.h"
 
 #include "defines.h"
