@@ -19,8 +19,8 @@ void gpio_ini(int pin){
     io_conf.intr_type = GPIO_INTR_DISABLE;
     //set as output mode
     io_conf.mode = GPIO_MODE_OUTPUT;
-    //bit mask of the pins that you want to set,e.g.GPIO18/19
-    io_conf.pin_bit_mask = (1ULL<<GPIO_NUM_14);
+    //bit mask of the pins that you want to set,e.g.GPIO14
+    io_conf.pin_bit_mask = (1ULL<<FRAME_OUT_PIN);
     //disable pull-down mode
     io_conf.pull_down_en = 0;
     //disable pull-up mode
@@ -29,21 +29,31 @@ void gpio_ini(int pin){
     gpio_config(&io_conf);
 }
 
+
+inline void setFrameLow(){
+    GPIO.out_w1tc = (1 << FRAME_OUT_PIN);
+}
+
+inline void setFrameHigh(){
+    GPIO.out_w1ts = (1 << FRAME_OUT_PIN);
+}
+
+// For test only, not used at main program
 void gpio_max_speed_test(){
-    gpio_ini(GPIO_NUM_14);
+    gpio_ini(FRAME_OUT_PIN);
     // int cnt = 0;
     // while(1) {
     //     printf("cnt: %d\n", cnt++);
     //     vTaskDelay(1000 / portTICK_RATE_MS);
-    //     gpio_set_level(GPIO_NUM_14, cnt % 2);
+    //     gpio_set_level(FRAME_OUT_PIN, cnt % 2);
     // }
     while (1)   
     {
         for(int i=0; i<10; i++){
-            GPIO.out_w1ts = (1 << GPIO_NUM_14);
+            GPIO.out_w1ts = (1 << FRAME_OUT_PIN);
             // __asm__ __volatile__("nop;nop;nop;nop;nop;nop;nop;"); // Bug workaround (I found this snippet somewhere in this forum)
 
-            GPIO.out_w1tc = (1 << GPIO_NUM_14);
+            GPIO.out_w1tc = (1 << FRAME_OUT_PIN);
             // __asm__ __volatile__("nop;nop;nop;nop;nop;nop;nop;");
         }
         vTaskDelay(1000 / portTICK_RATE_MS);

@@ -37,25 +37,25 @@ void initRmt(){
 }
 void runRmt() {
 	rmt_item32_t items_0[5];
-	items_0[0].duration0 = 390;
+	items_0[0].duration0 = 565;
 	items_0[0].level0 = 0;
-	items_0[0].duration1 = 350;
+	items_0[0].duration1 = 525;
 	items_0[0].level1 = 0;
-	items_0[1].duration0 = 13;
+	items_0[1].duration0 = 22;
 	items_0[1].level0 = 1;
-	items_0[1].duration1 = 33;
+	items_0[1].duration1 = 22;
 	items_0[1].level1 = 0;
-	items_0[2].duration0 = 13;
+	items_0[2].duration0 = 22;
 	items_0[2].level0 = 1;
-	items_0[2].duration1 = 33;
+	items_0[2].duration1 = 22;
 	items_0[2].level1 = 0;
-	items_0[3].duration0 = 13;
+	items_0[3].duration0 = 22;
 	items_0[3].level0 = 1;
-	items_0[3].duration1 = 33;
+	items_0[3].duration1 = 22;
 	items_0[3].level1 = 0;
-	items_0[4].duration0 = 13;
+	items_0[4].duration0 = 22;
 	items_0[4].level0 = 1;
-	items_0[4].duration1 = 33;
+	items_0[4].duration1 = 22;
 	items_0[4].level1 = 0;
 
 
