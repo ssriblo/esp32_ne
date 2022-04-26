@@ -10,14 +10,29 @@
 #include "rmt.h"
 
 static char tag[] = "rmt_tests";
+rmt_channel_t channelA, channelB; 
 
-void initRmt(){
+void initRmt(channelPulses_t channelPulses){
 	ESP_LOGI(tag, ">> runRmt");
+ 
+	gpio_num_t pinA, pinB;
+
+	if(channelPulses == CHANNEL_1_AB){
+		channelA = RMT_CHANNEL_0;
+		channelB = RMT_CHANNEL_1;
+		pinA = CHANNEL_1A_PIN;
+		pinB = CHANNEL_1B_PIN;
+	}else{
+		channelA = RMT_CHANNEL_2;
+		channelB = RMT_CHANNEL_3;
+		pinA = CHANNEL_2A_PIN;
+		pinB = CHANNEL_2B_PIN;
+	}
 
 	rmt_config_t config;
 	config.rmt_mode = RMT_MODE_TX;
-	config.channel = RMT_CHANNEL_0;
-	config.gpio_num = 21;
+	config.channel = channelA;
+	config.gpio_num = pinA;
 	config.mem_block_num = 1;
 	config.tx_config.loop_en = 0;
 	config.tx_config.carrier_en = 0;
@@ -30,59 +45,67 @@ void initRmt(){
 
 	ESP_ERROR_CHECK(rmt_config(&config));
 	ESP_ERROR_CHECK(rmt_driver_install(config.channel, 0, 0));
-	config.channel = RMT_CHANNEL_1;
-	config.gpio_num = 22;
+	config.channel = channelB;
+	config.gpio_num = pinB;
 	ESP_ERROR_CHECK(rmt_config(&config));
 	ESP_ERROR_CHECK(rmt_driver_install(config.channel, 0, 0));
 }
-void runRmt() {
-	rmt_item32_t items_0[5];
-	items_0[0].duration0 = 565;
-	items_0[0].level0 = 0;
-	items_0[0].duration1 = 525;
-	items_0[0].level1 = 0;
-	items_0[1].duration0 = 22;
-	items_0[1].level0 = 1;
-	items_0[1].duration1 = 22;
-	items_0[1].level1 = 0;
-	items_0[2].duration0 = 22;
-	items_0[2].level0 = 1;
-	items_0[2].duration1 = 22;
-	items_0[2].level1 = 0;
-	items_0[3].duration0 = 22;
-	items_0[3].level0 = 1;
-	items_0[3].duration1 = 22;
-	items_0[3].level1 = 0;
-	items_0[4].duration0 = 22;
-	items_0[4].level0 = 1;
-	items_0[4].duration1 = 22;
-	items_0[4].level1 = 0;
+void runRmt(channelPulses_t channelPulses) {
+	rmt_item32_t itemsA[5];
+	itemsA[0].duration0 = 565;
+	itemsA[0].level0 = 0;
+	itemsA[0].duration1 = 525;
+	itemsA[0].level1 = 0;
+	itemsA[1].duration0 = 22;
+	itemsA[1].level0 = 1;
+	itemsA[1].duration1 = 22;
+	itemsA[1].level1 = 0;
+	itemsA[2].duration0 = 22;
+	itemsA[2].level0 = 1;
+	itemsA[2].duration1 = 22;
+	itemsA[2].level1 = 0;
+	itemsA[3].duration0 = 22;
+	itemsA[3].level0 = 1;
+	itemsA[3].duration1 = 22;
+	itemsA[3].level1 = 0;
+	itemsA[4].duration0 = 22;
+	itemsA[4].level0 = 1;
+	itemsA[4].duration1 = 22;
+	itemsA[4].level1 = 0;
 
 
-	rmt_item32_t items_1[5];
-	items_1[0].duration0 = 22;
-	items_1[0].level0 = 1;
-	items_1[0].duration1 = 22;
-	items_1[0].level1 = 0;
-	items_1[1].duration0 = 22;
-	items_1[1].level0 = 1;
-	items_1[1].duration1 = 22;
-	items_1[1].level1 = 0;
-	items_1[2].duration0 = 22;
-	items_1[2].level0 = 1;
-	items_1[2].duration1 = 22;
-	items_1[2].level1 = 0;
-	items_1[3].duration0 = 22;
-	items_1[3].level0 = 1;
-	items_1[3].duration1 = 22;
-	items_1[3].level1 = 0;
-	items_1[4].duration0 = 22;
-	items_1[4].level0 = 0;
-	items_1[4].duration1 = 22;
-	items_1[4].level1 = 0;
+	rmt_item32_t itemsB[5];
+	itemsB[0].duration0 = 22;
+	itemsB[0].level0 = 1;
+	itemsB[0].duration1 = 22;
+	itemsB[0].level1 = 0;
+	itemsB[1].duration0 = 22;
+	itemsB[1].level0 = 1;
+	itemsB[1].duration1 = 22;
+	itemsB[1].level1 = 0;
+	itemsB[2].duration0 = 22;
+	itemsB[2].level0 = 1;
+	itemsB[2].duration1 = 22;
+	itemsB[2].level1 = 0;
+	itemsB[3].duration0 = 22;
+	itemsB[3].level0 = 1;
+	itemsB[3].duration1 = 22;
+	itemsB[3].level1 = 0;
+	itemsB[4].duration0 = 22;
+	itemsB[4].level0 = 0;
+	itemsB[4].duration1 = 22;
+	itemsB[4].level1 = 0;
 
-	ESP_ERROR_CHECK(rmt_write_items(RMT_CHANNEL_0, items_0,
-			5, /* Number of items_0 */
+	if(channelPulses == CHANNEL_1_AB){
+		channelA = RMT_CHANNEL_0;
+		channelB = RMT_CHANNEL_1;
+	}else{
+		channelA = RMT_CHANNEL_2;
+		channelB = RMT_CHANNEL_3;
+	}
+
+	ESP_ERROR_CHECK(rmt_write_items(channelA, itemsA,
+			5, /* Number of itemsA */
 			0 /* NOT wait till done */));
     __asm__ __volatile__ ("nop");
     __asm__ __volatile__ ("nop");
@@ -94,8 +117,8 @@ void runRmt() {
     __asm__ __volatile__ ("nop");
     __asm__ __volatile__ ("nop");
 
-	ESP_ERROR_CHECK(rmt_write_items(RMT_CHANNEL_1, items_1,
-			5, /* Number of items_1 */
+	ESP_ERROR_CHECK(rmt_write_items(channelB, itemsB,
+			5, /* Number of itemsB */
 			0 /* wait till done */));
 }
 

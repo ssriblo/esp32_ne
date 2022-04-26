@@ -12,7 +12,7 @@
 #include "defines.h"
 #include "gpio.h"
 
-void gpio_ini(int pin){
+void gpio_ini(){
     //zero-initialize the config sructure.
     gpio_config_t io_conf = {};
     //disable interrupt
@@ -27,14 +27,15 @@ void gpio_ini(int pin){
     io_conf.pull_up_en = 0;
     //configure GPIO with the given settings
     gpio_config(&io_conf);
+    GPIO.out_w1ts = (1 << FRAME_OUT_PIN);
 }
 
 
-inline void setFrameLow(){
+void setFrameLow(){
     GPIO.out_w1tc = (1 << FRAME_OUT_PIN);
 }
 
-inline void setFrameHigh(){
+void setFrameHigh(){
     GPIO.out_w1ts = (1 << FRAME_OUT_PIN);
 }
 

@@ -17,7 +17,22 @@ ToDo:
     - ADC Echo adjust sample rate, about 1.75MHz, not more then 2MHz
     - Second RMT channels 2A/2B add
     - ADC minus 40V function call
-    
+    - SPI for external ADC??
+    - ADC 8 bit parallel?
+    - cycle should be about 100ms
+
+Check List:
+    - Frame pulse
+    - RMT pulses
+    - RMT 2nd channel
+    - DAC shift, level
+    - ADC Echo input range
+    - PWM 40V pulses
+    - DAC signal
+    - ADC signal
+    - 100 ms cycle
+    - ADC 40V, minus 5V test
+
 ******************************************************************************/
 
 /******************************************************************************
@@ -33,19 +48,17 @@ ToDo:
 Hardware pin's setup:
     GPIO21 - Transmitter Channel 1A
     GPIO22 - Transmitter Channel 1B
-    GPIOxx - Transmitter Channel 2A
-    GPIOyy - Transmitter Channel 2B
+    GPIO32 - Transmitter Channel 2A
+    GPIO33 - Transmitter Channel 2B
     GPIO35 - Echo ADC input (ADC1_CHANNEL_7)
     GPIO26 - DAC ouptut
     GPIO14 - Frame pulse
-    pin - UART Tx - depends from current breadboard 
-    pin - UART Rx - depends from current breadboard 
+    TXD0 - UART Tx 
+    RXD0 - UART Rx 
     GPIO34 - minus 5V ADC input (ADC1_CHANNEL_6)
     GPIO39 - 40V ADC input (ADC1_CHANNEL_3)
     GPIO16 - 40V pulse gen (10us pulse high level, period 100 us)
-    SPI for external ADC??
-    ADC 8 bit parallel?
-
+    GPIO14 - Frame pulse
 ******************************************************************************/
 
 /****************************************************************/
@@ -89,12 +102,12 @@ Hardware pin's setup:
 
 // PWM output for minus 40V
 #define LEDC_TIMER              LEDC_TIMER_0
-#define LEDC_MODE               LEDC_LOW_SPEED_MODE
+#define LEDC_MODE               LEDC_HIGH_SPEED_MODE /* LEDC_HIGH_SPEED_MODE  LEDC_LOW_SPEED_MODE */
 // #define LEDC_OUTPUT_MINUS_5V    (16) // TBD
 #define LEDC_OUTPUT_40V         (16) // TBD
 // #define LEDC_CHANNEL_MINUS_5V   LEDC_CHANNEL_0
 #define LEDC_CHANNEL_40V        LEDC_CHANNEL_1
-#define LEDC_DUTY_RES           LEDC_TIMER_13_BIT // Set duty resolution to 13 bits
+#define LEDC_DUTY_RES           LEDC_TIMER_8_BIT 
 // #define LEDC_DUTY_MINUS_5V      (4095) // Set duty to 50%. ((2 ** 13) - 1) * 50% = 4095
 // PWM pulse 10us, duty cycle 10%
 #define LEDC_DUTY_40V           (819) // Set duty to 10%. ((2 ** 13) - 1) * 10% = 819
@@ -103,5 +116,16 @@ Hardware pin's setup:
 
 // Frame Ouput setup
 #define FRAME_OUT_PIN           GPIO_NUM_14
+
+// RMT setup
+typedef enum {
+    CHANNEL_1_AB = 0,
+    CHANNEL_2_AB
+}channelPulses_t;
+
+#define CHANNEL_1A_PIN 21
+#define CHANNEL_1B_PIN 22
+#define CHANNEL_2A_PIN 32
+#define CHANNEL_2B_PIN 33
 
 #endif

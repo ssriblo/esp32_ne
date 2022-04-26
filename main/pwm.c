@@ -14,9 +14,10 @@ void pwm_init(){
         .speed_mode       = LEDC_MODE,
         .timer_num        = LEDC_TIMER,
         .duty_resolution  = LEDC_DUTY_RES,
-        .freq_hz          = LEDC_FREQUENCY,  // Set output frequency at 5 kHz
-        .clk_cfg          = LEDC_AUTO_CLK
+        .freq_hz          = LEDC_FREQUENCY, 
+        .clk_cfg          = LEDC_AUTO_CLK // LEDC_USE_APB_CLK LEDC_AUTO_CLK
     };
+
     ESP_ERROR_CHECK(ledc_timer_config(&ledc_timer));
 
     // Prepare and then apply the LEDC PWM channel configuration

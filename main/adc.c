@@ -14,6 +14,7 @@
 #include "utility.h"
 #include "dac.h"
 #include "rmt.h"
+#include "gpio.h"
 
 static const char *TAG = "ADC";
 
@@ -70,29 +71,31 @@ static void continuous_adc_init(uint16_t adc1_chan_mask, uint16_t adc2_chan_mask
     dig_cfg.adc_pattern = adc_pattern;
     ESP_ERROR_CHECK(adc_digi_controller_configure(&dig_cfg));
 
-    printf("TIMES=%d  sample_freq_hz= %d\n", TIMES, dig_cfg.sample_freq_hz);
-
+    ESP_LOGI(TAG, "TIMES=%d  sample_freq_hz= %d", TIMES, dig_cfg.sample_freq_hz);
 }
 
 ///////////////////////////////////////////////////////////////////////////////
-void IRAM_ATTR start_adc_rmt_dac()
+void IRAM_ATTR start_adc_rmt_dac(channelPulses_t channelPulses)
 {
+    // ESP_LOGI(TAG, ">-1"));
     esp_err_t ret;
     uint32_t ret_num = 0;
     uint8_t result[TIMES] = {0};
     memset(result, 0xcc, TIMES);
-    
-    adc_channel_t channel[1] = {ADC_ECHO_INPUT};
-    continuous_adc_init(ADC1_CHAN_MASK, ADC2_CHAN_MASK, channel, sizeof(channel) / sizeof(adc_channel_t));
+
+    // ToDo: let channel_list updated for ADC -5V, 40V later
+    adc_channel_t channel_list[1] = {ADC_ECHO_INPUT};
+    continuous_adc_init(ADC1_CHAN_MASK, ADC2_CHAN_MASK, channel_list, sizeof(channel_list) / sizeof(adc_channel_t));
 
     ESP_LOGI("TASK:", ">>> START");
-
+    
+    setFrameLow();
     adc_digi_start(); // ADC+DMA start
-    runRmt();
+    runRmt(channelPulses);
     dac_start();    
-
     ret = adc_digi_read_bytes(result, TIMES, &ret_num, ADC_MAX_DELAY); // ADC data obtained from DAC ring buffer
-
+    setFrameHigh();
+    
     if (ret == ESP_OK || ret == ESP_ERR_INVALID_STATE) {
         if (ret == ESP_ERR_INVALID_STATE) {
             /**

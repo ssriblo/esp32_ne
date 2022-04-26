@@ -15,14 +15,23 @@
 #include "rmt.h"
 #include "dac.h"
 #include "pwm.h"
+#include "gpio.h"
 
 static const char *TAG = "NewEcho";
+channelPulses_t channelPulses;
+
+bool channnelFlipFlop = false;
 
 void loop(){
-    initRmt();
-    dac_init();
-    pwm_init();
-   
+    if(channnelFlipFlop){
+        channelPulses = CHANNEL_1_AB;
+        channnelFlipFlop = false;
+    }else{
+        channelPulses = CHANNEL_2_AB;
+        channnelFlipFlop = true;
+    }
+    initRmt(channelPulses);
+    
     while (1)
     {
         /* How to prevent ESP32 from switching tasks?
@@ -31,18 +40,22 @@ void loop(){
         // !!! WARNING !!! mutex and interrupt disable can not use there. Need to find out why, but rebooting !!!
         // portENTER_CRITICAL(&mutex); 
         // taskDISABLE_INTERRUPTS();
-        start_adc_rmt_dac();
+        start_adc_rmt_dac(channelPulses);
         // vTaskDelay(8000 / portTICK_PERIOD_MS); // example only
         // taskENABLE_INTERRUPTS();
         // portEXIT_CRITICAL(&mutex);
 
-        vTaskDelay( 3 * portTICK_PERIOD_MS ); // actually 150 ms period, why??
+        vTaskDelay( 1 * portTICK_PERIOD_MS ); // actually 150 ms period, why??
     }
     
 }
 ///////////////////////////////////////////////////////////////////////////////
 void app_main(){
-    // adc_start();       
+
+    gpio_ini();
+    dac_init();
+    pwm_init();
+   
     xTaskCreatePinnedToCore(
                 loop,   /* Function to implement the task */
                 "DataqAquringTask", /* Name of the task */
