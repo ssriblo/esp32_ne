@@ -31,19 +31,9 @@ void pwm_init(){
         .hpoint         = 0
     };
 
-
-    // ledc_channel.channel = LEDC_CHANNEL_MINUS_5V;
-    // ledc_channel.gpio_num = LEDC_OUTPUT_MINUS_5V;
-    // ESP_ERROR_CHECK(ledc_channel_config(&ledc_channel));
-
     ledc_channel.channel = LEDC_CHANNEL_40V;
     ledc_channel.gpio_num = LEDC_OUTPUT_40V;
     ESP_ERROR_CHECK(ledc_channel_config(&ledc_channel));
-
-    // // Set duty mius 5V
-    // ESP_ERROR_CHECK(ledc_set_duty(LEDC_MODE, LEDC_CHANNEL_MINUS_5V, LEDC_DUTY_MINUS_5V));
-    // // Update duty to apply the new value
-    // ESP_ERROR_CHECK(ledc_update_duty(LEDC_MODE, LEDC_CHANNEL_MINUS_5V));
 
     // Set duty 40V
     ESP_ERROR_CHECK(ledc_set_duty(LEDC_MODE, LEDC_CHANNEL_40V, LEDC_DUTY_40V));

@@ -23,11 +23,11 @@ ToDo:
 
 Check List:
     + Frame pulse --__-- 8ms, perido 160ms
-    - RMT pulses
-    - RMT 2nd channel
+    + RMT pulses
+    +  RMT 2nd channel
     - DAC shift, level
     - ADC Echo input range
-    - PWM 40V pulses
+    + PWM 40V pulses
     - DAC signal
     - ADC signal
     - 100 ms cycle
@@ -57,12 +57,11 @@ Hardware pin's setup:
     RXD0 - UART Rx 
     GPIO34 - minus 5V ADC input (ADC1_CHANNEL_6)
     GPIO39 - 40V ADC input (ADC1_CHANNEL_3)
-    GPIO16 - 40V pulse gen (10us pulse high level, period 100 us)
-    GPIO14 - Frame pulse
+    GPIO17 - 40V pulse gen (10us pulse high level, period 100 us)
 ******************************************************************************/
 
 /****************************************************************/
-#define BUILD_VERSION       "Build Version: 0.4 "
+#define BUILD_VERSION       "Build Version: 0.5 "
 /****************************************************************/
 
 //////////////////////////////////////////////////////////////////////////////
@@ -102,15 +101,11 @@ Hardware pin's setup:
 
 // PWM output for minus 40V
 #define LEDC_TIMER              LEDC_TIMER_0
-#define LEDC_MODE               LEDC_HIGH_SPEED_MODE /* LEDC_HIGH_SPEED_MODE  LEDC_LOW_SPEED_MODE */
-// #define LEDC_OUTPUT_MINUS_5V    (16) // TBD
-#define LEDC_OUTPUT_40V         (16) // TBD
-// #define LEDC_CHANNEL_MINUS_5V   LEDC_CHANNEL_0
-#define LEDC_CHANNEL_40V        LEDC_CHANNEL_1
+#define LEDC_MODE               LEDC_LOW_SPEED_MODE /* LEDC_HIGH_SPEED_MODE  LEDC_LOW_SPEED_MODE */
+#define LEDC_OUTPUT_40V         (17) 
+#define LEDC_CHANNEL_40V        LEDC_CHANNEL_0
 #define LEDC_DUTY_RES           LEDC_TIMER_8_BIT 
-// #define LEDC_DUTY_MINUS_5V      (4095) // Set duty to 50%. ((2 ** 13) - 1) * 50% = 4095
-// PWM pulse 10us, duty cycle 10%
-#define LEDC_DUTY_40V           (819) // Set duty to 10%. ((2 ** 13) - 1) * 10% = 819
+#define LEDC_DUTY_40V           (25) // Set duty to 10%. ((2 ** 8) - 1) * 10% = 25.5
 // PWM period 100us, frequency 10KHz
 #define LEDC_FREQUENCY          (10000) // Frequency in Hertz. Set frequency at 10 kHz
 
