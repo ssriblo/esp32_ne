@@ -14,7 +14,14 @@ rmt_channel_t channelA, channelB;
 
 void initRmt(channelPulses_t channelPulses){
 	ESP_LOGI(tag, ">> runRmt");
- 
+	/* PROBLEM: 
+		- We can not install driver, if it has installed already
+		- Let store current driver/channel statuses 
+		- Possilbe channel status: installed/not installed, stored at channelIsntalled[]
+		- channelIsntalled[0/1/2/3] mapped to RMT_CHANNEL_0/RMT_CHANNEL_1/RMT_CHANNEL_2/RMT_CHANNEL_3
+	*/
+	static bool channelIsntalled[4] = {false, false, false, false};
+	
 	gpio_num_t pinA, pinB;
 
 	if(channelPulses == CHANNEL_1_AB){
@@ -43,12 +50,23 @@ void initRmt(channelPulses_t channelPulses){
 	config.tx_config.carrier_level = 1;
 	config.clk_div = 1;
 
+	printf(">>>> RMT-1 CH=%d %d %d\n", config.channel, channelIsntalled[config.channel], channelPulses);
 	ESP_ERROR_CHECK(rmt_config(&config));
+	if(channelIsntalled[config.channel] == true){
+		ESP_ERROR_CHECK(rmt_driver_uninstall(config.channel));
+	}
 	ESP_ERROR_CHECK(rmt_driver_install(config.channel, 0, 0));
+	channelIsntalled[config.channel] = true;
+
 	config.channel = channelB;
 	config.gpio_num = pinB;
+	printf(">>>> RMT-2 CH=%d %d %d\n", config.channel, channelIsntalled[config.channel], channelPulses);
 	ESP_ERROR_CHECK(rmt_config(&config));
+	if(channelIsntalled[config.channel] == true){
+		ESP_ERROR_CHECK(rmt_driver_uninstall(config.channel));
+	}
 	ESP_ERROR_CHECK(rmt_driver_install(config.channel, 0, 0));
+	channelIsntalled[config.channel] = true;
 }
 void runRmt(channelPulses_t channelPulses) {
 	rmt_item32_t itemsA[5];

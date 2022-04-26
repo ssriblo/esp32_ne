@@ -22,7 +22,7 @@ ToDo:
     - cycle should be about 100ms
 
 Check List:
-    - Frame pulse
+    + Frame pulse --__-- 8ms, perido 160ms
     - RMT pulses
     - RMT 2nd channel
     - DAC shift, level

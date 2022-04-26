@@ -18,20 +18,12 @@
 #include "gpio.h"
 
 static const char *TAG = "NewEcho";
-channelPulses_t channelPulses;
 
-bool channnelFlipFlop = false;
 
 void loop(){
-    if(channnelFlipFlop){
-        channelPulses = CHANNEL_1_AB;
-        channnelFlipFlop = false;
-    }else{
-        channelPulses = CHANNEL_2_AB;
-        channnelFlipFlop = true;
-    }
-    initRmt(channelPulses);
-    
+    static bool channnelFlipFlop = false;
+    channelPulses_t channelPulses;
+
     while (1)
     {
         /* How to prevent ESP32 from switching tasks?
@@ -40,6 +32,15 @@ void loop(){
         // !!! WARNING !!! mutex and interrupt disable can not use there. Need to find out why, but rebooting !!!
         // portENTER_CRITICAL(&mutex); 
         // taskDISABLE_INTERRUPTS();
+
+        if(channnelFlipFlop){
+            channelPulses = CHANNEL_1_AB;
+            channnelFlipFlop = false;
+        }else{
+            channelPulses = CHANNEL_2_AB;
+            channnelFlipFlop = true;
+        }
+        printf(">>>> LOOP channelPulses=%d channnelFlipFlop=%d\n",  channelPulses, channnelFlipFlop);
         start_adc_rmt_dac(channelPulses);
         // vTaskDelay(8000 / portTICK_PERIOD_MS); // example only
         // taskENABLE_INTERRUPTS();
