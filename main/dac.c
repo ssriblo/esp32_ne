@@ -19,15 +19,13 @@
 
 static const char *TAG = "dac";
 uint8_t profile[PROFILE_SIZE];
+dac_channel_t channel = DAC_CHANNEL_2;
 
 void dac_init(){
     esp_err_t ret;
 
-    ret = dac_output_enable(DAC_CHANNEL_2);
+    ret = dac_output_enable(channel);
     ESP_ERROR_CHECK(ret);
-
-    SENS.sar_dac_ctrl1.sw_tone_en = 0;
-    SENS.sar_dac_ctrl2.dac_cw_en1 = 0;
 
     for(int i=0; i<PROFILE_SIZE; i++){
         profile[i] = i;
@@ -37,116 +35,117 @@ void dac_init(){
 
 
 void dac_start(){
-    HAL_FORCE_MODIFY_U32_REG_FIELD(RTCIO.pad_dac[0], dac, profile[0]); // 1
-    HAL_FORCE_MODIFY_U32_REG_FIELD(RTCIO.pad_dac[0], dac, profile[1]);
-    HAL_FORCE_MODIFY_U32_REG_FIELD(RTCIO.pad_dac[0], dac, profile[2]);
-    HAL_FORCE_MODIFY_U32_REG_FIELD(RTCIO.pad_dac[0], dac, profile[3]);
-    HAL_FORCE_MODIFY_U32_REG_FIELD(RTCIO.pad_dac[0], dac, profile[4]);
-    HAL_FORCE_MODIFY_U32_REG_FIELD(RTCIO.pad_dac[0], dac, profile[5]);
-    HAL_FORCE_MODIFY_U32_REG_FIELD(RTCIO.pad_dac[0], dac, profile[6]);
-    HAL_FORCE_MODIFY_U32_REG_FIELD(RTCIO.pad_dac[0], dac, profile[7]);
-    HAL_FORCE_MODIFY_U32_REG_FIELD(RTCIO.pad_dac[0], dac, profile[8]);
-    HAL_FORCE_MODIFY_U32_REG_FIELD(RTCIO.pad_dac[0], dac, profile[9]); // 10
-    HAL_FORCE_MODIFY_U32_REG_FIELD(RTCIO.pad_dac[0], dac, profile[10]); // 11
-    HAL_FORCE_MODIFY_U32_REG_FIELD(RTCIO.pad_dac[0], dac, profile[11]);
-    HAL_FORCE_MODIFY_U32_REG_FIELD(RTCIO.pad_dac[0], dac, profile[12]);
-    HAL_FORCE_MODIFY_U32_REG_FIELD(RTCIO.pad_dac[0], dac, profile[13]);
-    HAL_FORCE_MODIFY_U32_REG_FIELD(RTCIO.pad_dac[0], dac, profile[14]);
-    HAL_FORCE_MODIFY_U32_REG_FIELD(RTCIO.pad_dac[0], dac, profile[15]);
-    HAL_FORCE_MODIFY_U32_REG_FIELD(RTCIO.pad_dac[0], dac, profile[16]);
-    HAL_FORCE_MODIFY_U32_REG_FIELD(RTCIO.pad_dac[0], dac, profile[17]);
-    HAL_FORCE_MODIFY_U32_REG_FIELD(RTCIO.pad_dac[0], dac, profile[18]);
-    HAL_FORCE_MODIFY_U32_REG_FIELD(RTCIO.pad_dac[0], dac, profile[19]); // 20
-    HAL_FORCE_MODIFY_U32_REG_FIELD(RTCIO.pad_dac[0], dac, profile[20]); // 21
-    HAL_FORCE_MODIFY_U32_REG_FIELD(RTCIO.pad_dac[0], dac, profile[21]);
-    HAL_FORCE_MODIFY_U32_REG_FIELD(RTCIO.pad_dac[0], dac, profile[22]);
-    HAL_FORCE_MODIFY_U32_REG_FIELD(RTCIO.pad_dac[0], dac, profile[23]);
-    HAL_FORCE_MODIFY_U32_REG_FIELD(RTCIO.pad_dac[0], dac, profile[24]);
-    HAL_FORCE_MODIFY_U32_REG_FIELD(RTCIO.pad_dac[0], dac, profile[25]);
-    HAL_FORCE_MODIFY_U32_REG_FIELD(RTCIO.pad_dac[0], dac, profile[26]);
-    HAL_FORCE_MODIFY_U32_REG_FIELD(RTCIO.pad_dac[0], dac, profile[27]);
-    HAL_FORCE_MODIFY_U32_REG_FIELD(RTCIO.pad_dac[0], dac, profile[28]);
-    HAL_FORCE_MODIFY_U32_REG_FIELD(RTCIO.pad_dac[0], dac, profile[29]);
-    HAL_FORCE_MODIFY_U32_REG_FIELD(RTCIO.pad_dac[0], dac, profile[30]);
-    HAL_FORCE_MODIFY_U32_REG_FIELD(RTCIO.pad_dac[0], dac, profile[31]);
-    HAL_FORCE_MODIFY_U32_REG_FIELD(RTCIO.pad_dac[0], dac, profile[32]);
-    HAL_FORCE_MODIFY_U32_REG_FIELD(RTCIO.pad_dac[0], dac, profile[33]);
-    HAL_FORCE_MODIFY_U32_REG_FIELD(RTCIO.pad_dac[0], dac, profile[34]);
-    HAL_FORCE_MODIFY_U32_REG_FIELD(RTCIO.pad_dac[0], dac, profile[35]);
-    HAL_FORCE_MODIFY_U32_REG_FIELD(RTCIO.pad_dac[0], dac, profile[36]);
-    HAL_FORCE_MODIFY_U32_REG_FIELD(RTCIO.pad_dac[0], dac, profile[37]);
-    HAL_FORCE_MODIFY_U32_REG_FIELD(RTCIO.pad_dac[0], dac, profile[38]);
-    HAL_FORCE_MODIFY_U32_REG_FIELD(RTCIO.pad_dac[0], dac, profile[39]);
-    HAL_FORCE_MODIFY_U32_REG_FIELD(RTCIO.pad_dac[0], dac, profile[40]);
-    HAL_FORCE_MODIFY_U32_REG_FIELD(RTCIO.pad_dac[0], dac, profile[41]);
-    HAL_FORCE_MODIFY_U32_REG_FIELD(RTCIO.pad_dac[0], dac, profile[42]);
-    HAL_FORCE_MODIFY_U32_REG_FIELD(RTCIO.pad_dac[0], dac, profile[43]);
-    HAL_FORCE_MODIFY_U32_REG_FIELD(RTCIO.pad_dac[0], dac, profile[44]);
-    HAL_FORCE_MODIFY_U32_REG_FIELD(RTCIO.pad_dac[0], dac, profile[45]);
-    HAL_FORCE_MODIFY_U32_REG_FIELD(RTCIO.pad_dac[0], dac, profile[46]);
-    HAL_FORCE_MODIFY_U32_REG_FIELD(RTCIO.pad_dac[0], dac, profile[47]);
-    HAL_FORCE_MODIFY_U32_REG_FIELD(RTCIO.pad_dac[0], dac, profile[48]);
-    HAL_FORCE_MODIFY_U32_REG_FIELD(RTCIO.pad_dac[0], dac, profile[49]);
-    HAL_FORCE_MODIFY_U32_REG_FIELD(RTCIO.pad_dac[0], dac, profile[50]);
-    HAL_FORCE_MODIFY_U32_REG_FIELD(RTCIO.pad_dac[0], dac, profile[51]);
-    HAL_FORCE_MODIFY_U32_REG_FIELD(RTCIO.pad_dac[0], dac, profile[52]);
-    HAL_FORCE_MODIFY_U32_REG_FIELD(RTCIO.pad_dac[0], dac, profile[53]);
-    HAL_FORCE_MODIFY_U32_REG_FIELD(RTCIO.pad_dac[0], dac, profile[54]);
-    HAL_FORCE_MODIFY_U32_REG_FIELD(RTCIO.pad_dac[0], dac, profile[55]);
-    HAL_FORCE_MODIFY_U32_REG_FIELD(RTCIO.pad_dac[0], dac, profile[56]);
-    HAL_FORCE_MODIFY_U32_REG_FIELD(RTCIO.pad_dac[0], dac, profile[57]);
-    HAL_FORCE_MODIFY_U32_REG_FIELD(RTCIO.pad_dac[0], dac, profile[58]);
-    HAL_FORCE_MODIFY_U32_REG_FIELD(RTCIO.pad_dac[0], dac, profile[59]);
-    HAL_FORCE_MODIFY_U32_REG_FIELD(RTCIO.pad_dac[0], dac, profile[60]);
-    HAL_FORCE_MODIFY_U32_REG_FIELD(RTCIO.pad_dac[0], dac, profile[61]);
-    HAL_FORCE_MODIFY_U32_REG_FIELD(RTCIO.pad_dac[0], dac, profile[62]);
-    HAL_FORCE_MODIFY_U32_REG_FIELD(RTCIO.pad_dac[0], dac, profile[63]);
-    HAL_FORCE_MODIFY_U32_REG_FIELD(RTCIO.pad_dac[0], dac, profile[64]);
-    HAL_FORCE_MODIFY_U32_REG_FIELD(RTCIO.pad_dac[0], dac, profile[65]);
-    HAL_FORCE_MODIFY_U32_REG_FIELD(RTCIO.pad_dac[0], dac, profile[66]);
-    HAL_FORCE_MODIFY_U32_REG_FIELD(RTCIO.pad_dac[0], dac, profile[67]);
-    HAL_FORCE_MODIFY_U32_REG_FIELD(RTCIO.pad_dac[0], dac, profile[68]);
-    HAL_FORCE_MODIFY_U32_REG_FIELD(RTCIO.pad_dac[0], dac, profile[69]);
-    HAL_FORCE_MODIFY_U32_REG_FIELD(RTCIO.pad_dac[0], dac, profile[70]);
-    HAL_FORCE_MODIFY_U32_REG_FIELD(RTCIO.pad_dac[0], dac, profile[71]);
-    HAL_FORCE_MODIFY_U32_REG_FIELD(RTCIO.pad_dac[0], dac, profile[72]);
-    HAL_FORCE_MODIFY_U32_REG_FIELD(RTCIO.pad_dac[0], dac, profile[73]);
-    HAL_FORCE_MODIFY_U32_REG_FIELD(RTCIO.pad_dac[0], dac, profile[74]);
-    HAL_FORCE_MODIFY_U32_REG_FIELD(RTCIO.pad_dac[0], dac, profile[75]);
-    HAL_FORCE_MODIFY_U32_REG_FIELD(RTCIO.pad_dac[0], dac, profile[76]);
-    HAL_FORCE_MODIFY_U32_REG_FIELD(RTCIO.pad_dac[0], dac, profile[77]);
-    HAL_FORCE_MODIFY_U32_REG_FIELD(RTCIO.pad_dac[0], dac, profile[78]);
-    HAL_FORCE_MODIFY_U32_REG_FIELD(RTCIO.pad_dac[0], dac, profile[79]);
-    HAL_FORCE_MODIFY_U32_REG_FIELD(RTCIO.pad_dac[0], dac, profile[80]);
-    HAL_FORCE_MODIFY_U32_REG_FIELD(RTCIO.pad_dac[0], dac, profile[81]);
-    HAL_FORCE_MODIFY_U32_REG_FIELD(RTCIO.pad_dac[0], dac, profile[82]);
-    HAL_FORCE_MODIFY_U32_REG_FIELD(RTCIO.pad_dac[0], dac, profile[83]);
-    HAL_FORCE_MODIFY_U32_REG_FIELD(RTCIO.pad_dac[0], dac, profile[84]);
-    HAL_FORCE_MODIFY_U32_REG_FIELD(RTCIO.pad_dac[0], dac, profile[85]);
-    HAL_FORCE_MODIFY_U32_REG_FIELD(RTCIO.pad_dac[0], dac, profile[86]);
-    HAL_FORCE_MODIFY_U32_REG_FIELD(RTCIO.pad_dac[0], dac, profile[87]);
-    HAL_FORCE_MODIFY_U32_REG_FIELD(RTCIO.pad_dac[0], dac, profile[88]);
-    HAL_FORCE_MODIFY_U32_REG_FIELD(RTCIO.pad_dac[0], dac, profile[89]);
-    HAL_FORCE_MODIFY_U32_REG_FIELD(RTCIO.pad_dac[0], dac, profile[90]);
-    HAL_FORCE_MODIFY_U32_REG_FIELD(RTCIO.pad_dac[0], dac, profile[81]);
-    HAL_FORCE_MODIFY_U32_REG_FIELD(RTCIO.pad_dac[0], dac, profile[82]);
-    HAL_FORCE_MODIFY_U32_REG_FIELD(RTCIO.pad_dac[0], dac, profile[83]);
-    HAL_FORCE_MODIFY_U32_REG_FIELD(RTCIO.pad_dac[0], dac, profile[84]);
-    HAL_FORCE_MODIFY_U32_REG_FIELD(RTCIO.pad_dac[0], dac, profile[85]);
-    HAL_FORCE_MODIFY_U32_REG_FIELD(RTCIO.pad_dac[0], dac, profile[86]);
-    HAL_FORCE_MODIFY_U32_REG_FIELD(RTCIO.pad_dac[0], dac, profile[87]);
-    HAL_FORCE_MODIFY_U32_REG_FIELD(RTCIO.pad_dac[0], dac, profile[88]);
-    HAL_FORCE_MODIFY_U32_REG_FIELD(RTCIO.pad_dac[0], dac, profile[89]);
-    HAL_FORCE_MODIFY_U32_REG_FIELD(RTCIO.pad_dac[0], dac, profile[90]);
-    HAL_FORCE_MODIFY_U32_REG_FIELD(RTCIO.pad_dac[0], dac, profile[91]);
-    HAL_FORCE_MODIFY_U32_REG_FIELD(RTCIO.pad_dac[0], dac, profile[92]);
-    HAL_FORCE_MODIFY_U32_REG_FIELD(RTCIO.pad_dac[0], dac, profile[93]);
-    HAL_FORCE_MODIFY_U32_REG_FIELD(RTCIO.pad_dac[0], dac, profile[94]);
-    HAL_FORCE_MODIFY_U32_REG_FIELD(RTCIO.pad_dac[0], dac, profile[95]);
-    HAL_FORCE_MODIFY_U32_REG_FIELD(RTCIO.pad_dac[0], dac, profile[96]);
-    HAL_FORCE_MODIFY_U32_REG_FIELD(RTCIO.pad_dac[0], dac, profile[97]);
-    HAL_FORCE_MODIFY_U32_REG_FIELD(RTCIO.pad_dac[0], dac, profile[98]);
-    HAL_FORCE_MODIFY_U32_REG_FIELD(RTCIO.pad_dac[0], dac, profile[99]);
+    SENS.sar_dac_ctrl1.sw_tone_en = 0;
+    SENS.sar_dac_ctrl2.dac_cw_en1 = 0;
 
+    dac_ll_update_output_value(channel, profile[1]);
+    dac_ll_update_output_value(channel, profile[2]);
+    dac_ll_update_output_value(channel, profile[3]);
+    dac_ll_update_output_value(channel, profile[4]);
+    dac_ll_update_output_value(channel, profile[5]);
+    dac_ll_update_output_value(channel, profile[6]);
+    dac_ll_update_output_value(channel, profile[7]);
+    dac_ll_update_output_value(channel, profile[8]);
+    dac_ll_update_output_value(channel, profile[9]);
+    dac_ll_update_output_value(channel, profile[10]);
+
+
+    dac_ll_update_output_value(channel, profile[11]);
+    dac_ll_update_output_value(channel, profile[12]);
+    dac_ll_update_output_value(channel, profile[13]);
+    dac_ll_update_output_value(channel, profile[14]);
+    dac_ll_update_output_value(channel, profile[15]);
+    dac_ll_update_output_value(channel, profile[16]);
+    dac_ll_update_output_value(channel, profile[17]);
+    dac_ll_update_output_value(channel, profile[18]);
+    dac_ll_update_output_value(channel, profile[19]);
+    dac_ll_update_output_value(channel, profile[20]);
+
+    dac_ll_update_output_value(channel, profile[21]);
+    dac_ll_update_output_value(channel, profile[22]);
+    dac_ll_update_output_value(channel, profile[23]);
+    dac_ll_update_output_value(channel, profile[24]);
+    dac_ll_update_output_value(channel, profile[25]);
+    dac_ll_update_output_value(channel, profile[26]);
+    dac_ll_update_output_value(channel, profile[27]);
+    dac_ll_update_output_value(channel, profile[28]);
+    dac_ll_update_output_value(channel, profile[29]);
+    dac_ll_update_output_value(channel, profile[30]);
+
+    dac_ll_update_output_value(channel, profile[31]);
+    dac_ll_update_output_value(channel, profile[32]);
+    dac_ll_update_output_value(channel, profile[33]);
+    dac_ll_update_output_value(channel, profile[34]);
+    dac_ll_update_output_value(channel, profile[35]);
+    dac_ll_update_output_value(channel, profile[36]);
+    dac_ll_update_output_value(channel, profile[37]);
+    dac_ll_update_output_value(channel, profile[38]);
+    dac_ll_update_output_value(channel, profile[39]);
+    dac_ll_update_output_value(channel, profile[40]);
+
+    dac_ll_update_output_value(channel, profile[41]);
+    dac_ll_update_output_value(channel, profile[42]);
+    dac_ll_update_output_value(channel, profile[43]);
+    dac_ll_update_output_value(channel, profile[44]);
+    dac_ll_update_output_value(channel, profile[45]);
+    dac_ll_update_output_value(channel, profile[46]);
+    dac_ll_update_output_value(channel, profile[47]);
+    dac_ll_update_output_value(channel, profile[48]);
+    dac_ll_update_output_value(channel, profile[49]);
+    dac_ll_update_output_value(channel, profile[50]);
+
+    dac_ll_update_output_value(channel, profile[51]);
+    dac_ll_update_output_value(channel, profile[52]);
+    dac_ll_update_output_value(channel, profile[53]);
+    dac_ll_update_output_value(channel, profile[54]);
+    dac_ll_update_output_value(channel, profile[55]);
+    dac_ll_update_output_value(channel, profile[56]);
+    dac_ll_update_output_value(channel, profile[57]);
+    dac_ll_update_output_value(channel, profile[58]);
+    dac_ll_update_output_value(channel, profile[59]);
+    dac_ll_update_output_value(channel, profile[60]);
+
+    dac_ll_update_output_value(channel, profile[61]);
+    dac_ll_update_output_value(channel, profile[62]);
+    dac_ll_update_output_value(channel, profile[63]);
+    dac_ll_update_output_value(channel, profile[64]);
+    dac_ll_update_output_value(channel, profile[65]);
+    dac_ll_update_output_value(channel, profile[66]);
+    dac_ll_update_output_value(channel, profile[67]);
+    dac_ll_update_output_value(channel, profile[68]);
+    dac_ll_update_output_value(channel, profile[69]);
+    dac_ll_update_output_value(channel, profile[70]);
+
+    dac_ll_update_output_value(channel, profile[71]);
+    dac_ll_update_output_value(channel, profile[72]);
+    dac_ll_update_output_value(channel, profile[73]);
+    dac_ll_update_output_value(channel, profile[74]);
+    dac_ll_update_output_value(channel, profile[75]);
+    dac_ll_update_output_value(channel, profile[76]);
+    dac_ll_update_output_value(channel, profile[77]);
+    dac_ll_update_output_value(channel, profile[78]);
+    dac_ll_update_output_value(channel, profile[79]);
+    dac_ll_update_output_value(channel, profile[80]);
+
+    dac_ll_update_output_value(channel, profile[81]);
+    dac_ll_update_output_value(channel, profile[82]);
+    dac_ll_update_output_value(channel, profile[83]);
+    dac_ll_update_output_value(channel, profile[84]);
+    dac_ll_update_output_value(channel, profile[85]);
+    dac_ll_update_output_value(channel, profile[86]);
+    dac_ll_update_output_value(channel, profile[87]);
+    dac_ll_update_output_value(channel, profile[88]);
+    dac_ll_update_output_value(channel, profile[89]);
+    dac_ll_update_output_value(channel, profile[90]);
+
+    dac_ll_update_output_value(channel, profile[91]);
+    dac_ll_update_output_value(channel, profile[92]);
+    dac_ll_update_output_value(channel, profile[93]);
+    dac_ll_update_output_value(channel, profile[94]);
+    dac_ll_update_output_value(channel, profile[95]);
+    dac_ll_update_output_value(channel, profile[96]);
+    dac_ll_update_output_value(channel, profile[97]);
+    dac_ll_update_output_value(channel, profile[98]);
+    dac_ll_update_output_value(channel, profile[99]);
 }
 

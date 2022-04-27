@@ -42,6 +42,10 @@ void loop(){
         }
         printf(">>>> LOOP channelPulses=%d channnelFlipFlop=%d\n",  channelPulses, channnelFlipFlop);
         start_adc_rmt_dac(channelPulses);
+    
+        // dac_init();    
+        // dac_start();
+
         // vTaskDelay(8000 / portTICK_PERIOD_MS); // example only
         // taskENABLE_INTERRUPTS();
         // portEXIT_CRITICAL(&mutex);
