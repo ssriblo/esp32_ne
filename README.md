@@ -34,7 +34,7 @@ uint8_t profile[PROFILE_SIZE];
 
 Внимание, если требуется изменить число отсчетов, то в файле dac.c следует изменить число записей в ЦАП, т.е. таких строк:
 ```
-HAL_FORCE_MODIFY_U32_REG_FIELD(RTCIO.pad_dac[0], dac, profile[99]);
+dac_ll_update_output_value(channel, profile[1]);
 ...
 ```
 ## 1.75MHz pulses
