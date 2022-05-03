@@ -64,6 +64,13 @@ Hardware pin's setup:
 #define BUILD_VERSION       "Build Version: 0.5 "
 /****************************************************************/
 
+#define PRINT_ADC_DATA      1
+// Uncomment follow if need to test ADC and disable DAC. Instead ordinary DAC cosin generator used
+// #define COSIN_DAC_TEST      1
+
+// Uncomment follow if need to do 40V slow adc
+#define SLOW_ADC_TEST       1
+
 //////////////////////////////////////////////////////////////////////////////
 // For release uncomment this option:
 #define RELEASE                             1
@@ -98,6 +105,10 @@ Hardware pin's setup:
 
 #define ADC1_CHAN_MASK      BIT(7)
 #define ADC2_CHAN_MASK      0  
+
+#define DEFAULT_VREF    1100        //Use adc2_vref_to_gpio() to obtain a better estimate
+#define NO_OF_SAMPLES   64          //Multisampling
+#define CHANNEL_SLOW    ADC1_CHANNEL_3  /*GPIO34 for ADC1*/
 
 // PWM output for minus 40V
 #define LEDC_TIMER              LEDC_TIMER_0

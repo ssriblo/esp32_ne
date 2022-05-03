@@ -16,8 +16,17 @@
 #include "rmt.h"
 #include "gpio.h"
 
+#include <stdio.h>
+#include <stdlib.h>
+#include "freertos/FreeRTOS.h"
+#include "freertos/task.h"
+#include "driver/gpio.h"
+#include "driver/adc.h"
+#include "esp_adc_cal.h"
+
 static const char *TAG = "ADC";
 
+static bool buffer_print_done = false;
 ///////////////////////////////////////////////////////////////////////////////
 // Helper function takes tick into nanoseconds
 // https://github.com/eerimoq/simba/issues/155
@@ -33,6 +42,41 @@ static int sys_port_get_time_into_tick()
     ccount /= ets_get_cpu_frequency(); // (freq_MHz*1000000) Hz = 1/second // Get the real CPU ticks per us to the ets.
     
     return ccount;
+}
+
+static void print_char_val_type(esp_adc_cal_value_t val_type)
+{
+    if (val_type == ESP_ADC_CAL_VAL_EFUSE_TP) {
+        printf("Characterized using Two Point Value\n");
+    } else if (val_type == ESP_ADC_CAL_VAL_EFUSE_VREF) {
+        printf("Characterized using eFuse Vref\n");
+    } else {
+        printf("Characterized using Default Vref\n");
+    }
+}
+
+uint32_t adc1_slow(const adc_channel_t channel){
+    static esp_adc_cal_characteristics_t *adc_chars;
+    adc1_config_width(ADC_WIDTH_BIT_12);
+    adc1_config_channel_atten(channel, ADC_ATTEN_DB_11);
+    //Characterize ADC
+    adc_chars = calloc(1, sizeof(esp_adc_cal_characteristics_t));
+    esp_adc_cal_value_t val_type = esp_adc_cal_characterize(ADC_UNIT_1, ADC_ATTEN_DB_11, ADC_WIDTH_BIT_12, DEFAULT_VREF, adc_chars);
+    print_char_val_type(val_type);
+
+    uint32_t adc_reading = 0;
+    //Multisampling
+    for (int i = 0; i < NO_OF_SAMPLES; i++) {
+            // adc_reading += adc1_get_raw((adc1_channel_t)channel);
+    }
+    adc_reading /= NO_OF_SAMPLES;
+    //Convert adc_reading to voltage in mV
+    uint32_t voltage = esp_adc_cal_raw_to_voltage(adc_reading, adc_chars);
+    printf("Raw: %d\tVoltage: %dmV\n", adc_reading, voltage);
+
+    adc_digi_stop();
+    adc_digi_deinitialize();
+    return voltage;
 }
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -59,7 +103,7 @@ static void continuous_adc_init(uint16_t adc1_chan_mask, uint16_t adc2_chan_mask
     for (int i = 0; i < channel_num; i++) {
         uint8_t unit = GET_UNIT(channel[i]);
         uint8_t ch = channel[i] & 0x7;
-        adc_pattern[i].atten = ADC_ATTEN_DB_0;
+        adc_pattern[i].atten = ADC_ATTEN_DB_11; // ADC_ATTEN_DB_11  ADC_ATTEN_DB_6  ADC_ATTEN_DB_0
         adc_pattern[i].channel = ch;
         adc_pattern[i].unit = unit;
         adc_pattern[i].bit_width = SOC_ADC_DIGI_MAX_BITWIDTH;
@@ -90,12 +134,18 @@ void IRAM_ATTR start_adc_rmt_dac(channelPulses_t channelPulses)
     initRmt(channelPulses);
     ESP_LOGI("TASK:", ">>> START");
     
+    int t1 = sys_port_get_time_into_tick();
     setFrameLow();
     adc_digi_start(); // ADC+DMA start
     runRmt(channelPulses);
+
+#ifndef COSIN_DAC_TEST
     dac_start();    
+#endif 
+
     ret = adc_digi_read_bytes(result, TIMES, &ret_num, ADC_MAX_DELAY); // ADC data obtained from DAC ring buffer
     setFrameHigh();
+    int t2 = sys_port_get_time_into_tick();
     
     if (ret == ESP_OK || ret == ESP_ERR_INVALID_STATE) {
         if (ret == ESP_ERR_INVALID_STATE) {
@@ -117,15 +167,27 @@ void IRAM_ATTR start_adc_rmt_dac(channelPulses_t channelPulses)
         }
 
         ESP_LOGI("TASK:", "ret is %x, ret_num is %d", ret, ret_num);
+        ESP_LOGI("TASK:", "t1=%d, t2=%d t2-t1=%d\n", t1, t2, t2-t1);
 #ifdef PRINT_ADC_DATA
-        for (int i = 0; i < ret_num; i += ADC_RESULT_BYTE) {
-            adc_digi_output_data_t *p = (void*)&result[i];
-            ESP_LOGI(TAG, "Unit: %d, Channel: %d, Value: %x", 1, p->type1.channel, p->type1.data);
-            ESP_LOGI(TAG, "i=%d Value_Hex: %x Value_Dec= %d ", i, p->type1.data, p->type1.data);
+        uint64_t adc_data64 = 0;
+        uint32_t result32 = 0;
+        if(buffer_print_done != true){
+            for (int i = 0; i < ret_num; i += ADC_RESULT_BYTE) {
+            // for (int i = 0; i < 10; i += ADC_RESULT_BYTE) {
+                adc_digi_output_data_t *p = (void*)&result[i];
+                adc_data64 += p->type1.data;
+                result32 = p->type1.data;
+                // ESP_LOGI(TAG, "Unit: %d, Channel: %d, Value: %x  ", 1, p->type1.channel, p->type1.data);
+                // ESP_LOGI(TAG, "i=%d Value_Hex: %x Value_Dec= %d ", i, p->type1.data, p->type1.data);
+                // buffer_print_done = true;
+            }
+                uint32_t adc_data32 = adc_data64 / (ret_num / ADC_RESULT_BYTE);
+                ESP_LOGI(TAG, "result32=%d ADC=%d ", result32, adc_data32);
+           
         }
 #endif
         //See `note 1`
-        vTaskDelay(1);
+        vTaskDelay(100);
     } else if (ret == ESP_ERR_TIMEOUT) {
         /**
          * ``ESP_ERR_TIMEOUT``: If ADC conversion is not finished until Timeout, you'll get this return error.

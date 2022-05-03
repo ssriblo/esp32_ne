@@ -16,6 +16,7 @@
 #include "dac.h"
 #include "pwm.h"
 #include "gpio.h"
+#include "dac-cosin.h"
 
 static const char *TAG = "NewEcho";
 
@@ -42,9 +43,10 @@ void loop(){
         }
         printf(">>>> LOOP channelPulses=%d channnelFlipFlop=%d\n",  channelPulses, channnelFlipFlop);
         start_adc_rmt_dac(channelPulses);
-    
-        // dac_init();    
-        // dac_start();
+
+#ifdef SLOW_ADC_TEST
+        adc1_slow(ADC1_CHANNEL_3);
+#endif
 
         // vTaskDelay(8000 / portTICK_PERIOD_MS); // example only
         // taskENABLE_INTERRUPTS();
@@ -58,9 +60,12 @@ void loop(){
 void app_main(){
 
     gpio_ini();
-    dac_init();
     pwm_init();
-   
+#ifdef COSIN_DAC_TEST
+    dac_app_main(); // cosin generator
+#else
+    dac_init();
+#endif   
     xTaskCreatePinnedToCore(
                 loop,   /* Function to implement the task */
                 "DataqAquringTask", /* Name of the task */
