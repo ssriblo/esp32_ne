@@ -33,7 +33,7 @@ void loop(){
         // !!! WARNING !!! mutex and interrupt disable can not use there. Need to find out why, but rebooting !!!
         // portENTER_CRITICAL(&mutex); 
         // taskDISABLE_INTERRUPTS();
-
+#ifdef CHANNELS_FLIP
         if(channnelFlipFlop){
             channelPulses = CHANNEL_1_AB;
             channnelFlipFlop = false;
@@ -41,6 +41,10 @@ void loop(){
             channelPulses = CHANNEL_2_AB;
             channnelFlipFlop = true;
         }
+#else
+        channelPulses = CHANNEL_1_AB;
+
+#endif
         printf(">>>> LOOP channelPulses=%d channnelFlipFlop=%d\n",  channelPulses, channnelFlipFlop);
         start_adc_rmt_dac(channelPulses);
 

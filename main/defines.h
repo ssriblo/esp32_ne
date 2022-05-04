@@ -11,12 +11,9 @@ ToDo:
     - ADC shift, levels, profile
     - Disable all interrupt and Freertos task switch - tried to do but rebooing...
     - Setup proper 4 pulses at RMT module
-    - Add PWM and ADC for minus 5V/40V
     - Fram pulse
-    - ADC for minus 5V, 40V
     - ADC Echo adjust sample rate, about 1.75MHz, not more then 2MHz
     - Second RMT channels 2A/2B add
-    - ADC minus 40V function call
     - SPI for external ADC??
     - ADC 8 bit parallel?
     - cycle should be about 100ms
@@ -25,13 +22,12 @@ Check List:
     + Frame pulse --__-- 8ms, perido 160ms
     + RMT pulses
     +  RMT 2nd channel
-    - DAC shift, level
-    - ADC Echo input range
+    + DAC shift, level
+    + ADC Echo input range
     + PWM 40V pulses
-    - DAC signal
-    - ADC signal
+    + DAC signal
+    + ADC signal
     - 100 ms cycle
-    - ADC 40V, minus 5V test
 
 ******************************************************************************/
 
@@ -55,7 +51,6 @@ Hardware pin's setup:
     GPIO14 - Frame pulse
     TXD0 - UART Tx 
     RXD0 - UART Rx 
-    GPIO34 - minus 5V ADC input (ADC1_CHANNEL_6)
     GPIO39 - 40V ADC input (ADC1_CHANNEL_3)
     GPIO17 - 40V pulse gen (10us pulse high level, period 100 us)
 ******************************************************************************/
@@ -69,7 +64,7 @@ Hardware pin's setup:
 // #define COSIN_DAC_TEST      1
 
 // Uncomment follow if need to do 40V slow adc
-#define SLOW_ADC_TEST       1
+// #define SLOW_ADC_TEST       1
 
 //////////////////////////////////////////////////////////////////////////////
 // For release uncomment this option:
@@ -85,9 +80,6 @@ Hardware pin's setup:
 
 // ADC for echo acquisition
 #define ADC_ECHO_INPUT      ADC1_CHANNEL_7 /* pin GPIO35 */
-
-// ADC for minus 5V power supply (possibly is not needed?)
-#define ADC_MINUS_5V_INPUT  ADC1_CHANNEL_6 /* pin GPIO34 */
 
 // ADC for 40V power supply
 #define ADC_40V_INPUT       ADC1_CHANNEL_3 /* pin GPIO39 */
@@ -110,7 +102,7 @@ Hardware pin's setup:
 #define NO_OF_SAMPLES   64          //Multisampling
 #define CHANNEL_SLOW    ADC1_CHANNEL_3  /*GPIO34 for ADC1*/
 
-// PWM output for minus 40V
+// PWM output for 40V
 #define LEDC_TIMER              LEDC_TIMER_0
 #define LEDC_MODE               LEDC_LOW_SPEED_MODE /* LEDC_HIGH_SPEED_MODE  LEDC_LOW_SPEED_MODE */
 #define LEDC_OUTPUT_40V         (17) 

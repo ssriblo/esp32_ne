@@ -187,7 +187,7 @@ void IRAM_ATTR start_adc_rmt_dac(channelPulses_t channelPulses)
         }
 #endif
         //See `note 1`
-        vTaskDelay(100);
+        vTaskDelay(10);
     } else if (ret == ESP_ERR_TIMEOUT) {
         /**
          * ``ESP_ERR_TIMEOUT``: If ADC conversion is not finished until Timeout, you'll get this return error.
