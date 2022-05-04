@@ -136,10 +136,10 @@ void IRAM_ATTR start_adc_rmt_dac(channelPulses_t channelPulses)
     setFrameLow();
     adc_digi_start(); // ADC+DMA start
     // int t2 = sys_port_get_time_into_tick();
-    setFrameLow();
     int t1 = sys_port_get_time_into_tick();
+    setFrameLow();
     runRmt(channelPulses);
-    int t3 = sys_port_get_time_into_tick();
+    // int t3 = sys_port_get_time_into_tick();
 
 #ifndef COSIN_DAC_TEST
     dac_start();    
@@ -148,7 +148,7 @@ void IRAM_ATTR start_adc_rmt_dac(channelPulses_t channelPulses)
     ret = adc_digi_read_bytes(result, TIMES, &ret_num, ADC_MAX_DELAY); // ADC data obtained from DAC ring buffer
     setFrameHigh();
     int t2 = sys_port_get_time_into_tick();
-    // int t3 = sys_port_get_time_into_tick();
+    int t3 = sys_port_get_time_into_tick();
     
     if (ret == ESP_OK || ret == ESP_ERR_INVALID_STATE) {
         if (ret == ESP_ERR_INVALID_STATE) {
