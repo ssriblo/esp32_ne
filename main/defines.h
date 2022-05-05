@@ -7,16 +7,11 @@
 
 /******************************************************************************
 ToDo:
-    - DAC code shift, levels
-    - ADC shift, levels, profile
     - Disable all interrupt and Freertos task switch - tried to do but rebooing...
-    - Setup proper 4 pulses at RMT module
-    - Fram pulse
     - ADC Echo adjust sample rate, about 1.75MHz, not more then 2MHz
     - Second RMT channels 2A/2B add
     - SPI for external ADC??
     - ADC 8 bit parallel?
-    - cycle should be about 100ms
 
 Check List:
     + Frame pulse --__-- 8ms, perido 160ms
@@ -27,7 +22,8 @@ Check List:
     + PWM 40V pulses
     + DAC signal
     + ADC signal
-    - 100 ms cycle
+    + 100 ms cycle
+    + ADC 40V, 
 
 ******************************************************************************/
 
@@ -56,7 +52,7 @@ Hardware pin's setup:
 ******************************************************************************/
 
 /****************************************************************/
-#define BUILD_VERSION       "Build Version: 0.5 "
+#define BUILD_VERSION       "Build Version: 0.6 "
 /****************************************************************/
 
 #define PRINT_ADC_DATA      1

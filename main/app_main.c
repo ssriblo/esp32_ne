@@ -23,7 +23,8 @@ static const char *TAG = "NewEcho";
 
 void loop(){
     static bool channnelFlipFlop = false;
-    channelPulses_t channelPulses;
+    channelPulses_t channelPulses = CHANNEL_1_AB;
+    initRmt(channelPulses);
 
     while (1)
     {
@@ -33,18 +34,13 @@ void loop(){
         // !!! WARNING !!! mutex and interrupt disable can not use there. Need to find out why, but rebooting !!!
         // portENTER_CRITICAL(&mutex); 
         // taskDISABLE_INTERRUPTS();
-#ifdef CHANNELS_FLIP
-        if(channnelFlipFlop){
-            channelPulses = CHANNEL_1_AB;
-            channnelFlipFlop = false;
-        }else{
-            channelPulses = CHANNEL_2_AB;
-            channnelFlipFlop = true;
-        }
-#else
-        channelPulses = CHANNEL_1_AB;
-
-#endif
+        // if(channnelFlipFlop){
+        //     channelPulses = CHANNEL_1_AB;
+        //     channnelFlipFlop = false;
+        // }else{
+        //     channelPulses = CHANNEL_1_AB;
+        //     channnelFlipFlop = true;
+        // }
         printf(">>>> LOOP channelPulses=%d channnelFlipFlop=%d\n",  channelPulses, channnelFlipFlop);
         start_adc_rmt_dac(channelPulses);
 

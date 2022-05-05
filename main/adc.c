@@ -130,16 +130,13 @@ void IRAM_ATTR start_adc_rmt_dac(channelPulses_t channelPulses)
     adc_channel_t channel_list[1] = {ADC_ECHO_INPUT};
     continuous_adc_init(ADC1_CHAN_MASK, ADC2_CHAN_MASK, channel_list, sizeof(channel_list) / sizeof(adc_channel_t));
 
-    initRmt(channelPulses);
+    // initRmt(channelPulses);
     ESP_LOGI("TASK:", ">>> START");
     
-    setFrameLow();
-    adc_digi_start(); // ADC+DMA start
-    // int t2 = sys_port_get_time_into_tick();
     int t1 = sys_port_get_time_into_tick();
+    adc_digi_start(); // ADC+DMA start
     setFrameLow();
     runRmt(channelPulses);
-    // int t3 = sys_port_get_time_into_tick();
 
 #ifndef COSIN_DAC_TEST
     dac_start();    
@@ -148,7 +145,6 @@ void IRAM_ATTR start_adc_rmt_dac(channelPulses_t channelPulses)
     ret = adc_digi_read_bytes(result, TIMES, &ret_num, ADC_MAX_DELAY); // ADC data obtained from DAC ring buffer
     setFrameHigh();
     int t2 = sys_port_get_time_into_tick();
-    int t3 = sys_port_get_time_into_tick();
     
     if (ret == ESP_OK || ret == ESP_ERR_INVALID_STATE) {
         if (ret == ESP_ERR_INVALID_STATE) {
@@ -170,7 +166,7 @@ void IRAM_ATTR start_adc_rmt_dac(channelPulses_t channelPulses)
         }
 
         ESP_LOGI("TASK:", "ret is %x, ret_num is %d", ret, ret_num);
-        ESP_LOGI("TASK:", "t1=%d, t2=%d t2-t1=%d t3-t1=%d\n", t1, t2, t2-t1, t3-t1);
+        ESP_LOGI("TASK:", "t1=%d, t2=%d t2-t1=%d\n", t1, t2, t2-t1);
 #ifdef PRINT_ADC_DATA
         uint64_t adc_data64 = 0;
         uint32_t result32 = 0;
@@ -190,7 +186,7 @@ void IRAM_ATTR start_adc_rmt_dac(channelPulses_t channelPulses)
         }
 #endif
         //See `note 1`
-        vTaskDelay(10);
+        // vTaskDelay(100);
     } else if (ret == ESP_ERR_TIMEOUT) {
         /**
          * ``ESP_ERR_TIMEOUT``: If ADC conversion is not finished until Timeout, you'll get this return error.
