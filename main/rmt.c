@@ -38,8 +38,10 @@ void initRmt(channelPulses_t channelPulses){
 
 	rmt_config_t config;
 	config.rmt_mode = RMT_MODE_TX;
-	config.channel = channelA;
-	config.gpio_num = pinA;
+	// config.channel = channelA;
+	config.channel = RMT_CHANNEL_0;
+	// config.gpio_num = pinA;
+	config.gpio_num = 21;
 	config.mem_block_num = 1;
 	config.tx_config.loop_en = 0;
 	config.tx_config.carrier_en = 0;
@@ -52,19 +54,21 @@ void initRmt(channelPulses_t channelPulses){
 
 	printf(">>>> RMT-1 CH=%d %d %d\n", config.channel, channelIsntalled[config.channel], channelPulses);
 	ESP_ERROR_CHECK(rmt_config(&config));
-	if(channelIsntalled[config.channel] == true){
-		ESP_ERROR_CHECK(rmt_driver_uninstall(config.channel));
-	}
+	// if(channelIsntalled[config.channel] == true){
+	// 	ESP_ERROR_CHECK(rmt_driver_uninstall(config.channel));
+	// }
 	ESP_ERROR_CHECK(rmt_driver_install(config.channel, 0, 0));
 	channelIsntalled[config.channel] = true;
 
-	config.channel = channelB;
-	config.gpio_num = pinB;
+	// config.channel = channelB;
+	// config.gpio_num = pinB;
+	config.channel = RMT_CHANNEL_1;
+	config.gpio_num = 22;
 	printf(">>>> RMT-2 CH=%d %d %d\n", config.channel, channelIsntalled[config.channel], channelPulses);
 	ESP_ERROR_CHECK(rmt_config(&config));
-	if(channelIsntalled[config.channel] == true){
-		ESP_ERROR_CHECK(rmt_driver_uninstall(config.channel));
-	}
+	// if(channelIsntalled[config.channel] == true){
+		// ESP_ERROR_CHECK(rmt_driver_uninstall(config.channel));
+	// }
 	ESP_ERROR_CHECK(rmt_driver_install(config.channel, 0, 0));
 	channelIsntalled[config.channel] = true;
 }

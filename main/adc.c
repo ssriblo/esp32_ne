@@ -131,12 +131,12 @@ void IRAM_ATTR start_adc_rmt_dac(channelPulses_t channelPulses)
     adc_channel_t channel_list[1] = {ADC_ECHO_INPUT};
     continuous_adc_init(ADC1_CHAN_MASK, ADC2_CHAN_MASK, channel_list, sizeof(channel_list) / sizeof(adc_channel_t));
 
-    initRmt(channelPulses);
+    // initRmt(channelPulses);
     ESP_LOGI("TASK:", ">>> START");
     
     int t1 = sys_port_get_time_into_tick();
-    setFrameLow();
     adc_digi_start(); // ADC+DMA start
+    setFrameLow();
     runRmt(channelPulses);
 
 #ifndef COSIN_DAC_TEST
@@ -187,7 +187,7 @@ void IRAM_ATTR start_adc_rmt_dac(channelPulses_t channelPulses)
         }
 #endif
         //See `note 1`
-        vTaskDelay(100);
+        // vTaskDelay(100);
     } else if (ret == ESP_ERR_TIMEOUT) {
         /**
          * ``ESP_ERR_TIMEOUT``: If ADC conversion is not finished until Timeout, you'll get this return error.
