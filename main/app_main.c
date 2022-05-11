@@ -30,8 +30,8 @@ void loop(){
     {
         /* How to prevent ESP32 from switching tasks?
         https://esp32.com/viewtopic.php?t=10457 */
-        // portMUX_TYPE mutex = portMUX_INITIALIZER_UNLOCKED;
         // !!! WARNING !!! mutex and interrupt disable can not use there. Need to find out why, but rebooting !!!
+        // portMUX_TYPE mutex = portMUX_INITIALIZER_UNLOCKED;
         // portENTER_CRITICAL(&mutex); 
         // taskDISABLE_INTERRUPTS();
         // if(channnelFlipFlop){
@@ -41,7 +41,7 @@ void loop(){
         //     channelPulses = CHANNEL_1_AB;
         //     channnelFlipFlop = true;
         // }
-        printf(">>>> LOOP channelPulses=%d channnelFlipFlop=%d\n",  channelPulses, channnelFlipFlop);
+        // printf(">>>> LOOP channelPulses=%d channnelFlipFlop=%d\n",  channelPulses, channnelFlipFlop);
         start_adc_rmt_dac(channelPulses);
 
 #ifdef SLOW_ADC_TEST
@@ -71,9 +71,9 @@ void app_main(){
                 "DataqAquringTask", /* Name of the task */
                 10000,      /* Stack size in words */
                 NULL,       /* Task input parameter */
-                0,          /* Priority of the task */
+                16,          /* Priority of the task */
                 NULL,       /* Task handle. */
-                1);  /* Core where the task should run */
+                APP_CPU_NUM);  /* Core where the task should run */
 
 }
 

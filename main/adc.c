@@ -132,7 +132,19 @@ void IRAM_ATTR start_adc_rmt_dac(channelPulses_t channelPulses)
 
     // initRmt(channelPulses);
     ESP_LOGI("TASK:", ">>> START");
-    
+
+
+        /* How to prevent ESP32 from switching tasks?
+        https://esp32.com/viewtopic.php?t=10457 */
+        // !!! WARNING !!! mutex and interrupt disable can not use there. Need to find out why, but rebooting !!!
+        // portMUX_TYPE mutex = portMUX_INITIALIZER_UNLOCKED;
+        // portENTER_CRITICAL(&mutex); 
+        // taskDISABLE_INTERRUPTS();
+        // vTaskDelay(8000 / portTICK_PERIOD_MS); // example only
+        // taskENABLE_INTERRUPTS();
+        // portEXIT_CRITICAL(&mutex);
+
+
     int t1 = sys_port_get_time_into_tick();
     adc_digi_start(); // ADC+DMA start
     setFrameLow();
@@ -145,7 +157,8 @@ void IRAM_ATTR start_adc_rmt_dac(channelPulses_t channelPulses)
     ret = adc_digi_read_bytes(result, TIMES, &ret_num, ADC_MAX_DELAY); // ADC data obtained from DAC ring buffer
     setFrameHigh();
     int t2 = sys_port_get_time_into_tick();
-    
+
+
     if (ret == ESP_OK || ret == ESP_ERR_INVALID_STATE) {
         if (ret == ESP_ERR_INVALID_STATE) {
             /**
