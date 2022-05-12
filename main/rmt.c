@@ -74,9 +74,13 @@ void initRmt(channelPulses_t channelPulses){
 }
 void runRmt(channelPulses_t channelPulses) {
 	rmt_item32_t itemsA[5];
-	itemsA[0].duration0 = 565;
+	// itemsA[0].duration0 = 565;
+	// itemsA[0].level0 = 0;
+	// itemsA[0].duration1 = 525;
+	// itemsA[0].level1 = 0;
+	itemsA[0].duration0 = 398;
 	itemsA[0].level0 = 0;
-	itemsA[0].duration1 = 525;
+	itemsA[0].duration1 = 358;
 	itemsA[0].level1 = 0;
 	itemsA[1].duration0 = 22;
 	itemsA[1].level0 = 1;
