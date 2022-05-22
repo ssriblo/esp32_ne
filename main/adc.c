@@ -150,9 +150,9 @@ void IRAM_ATTR start_adc_rmt_dac(channelPulses_t channelPulses)
     setFrameLow();
     runRmt(channelPulses);
 
-#ifndef COSIN_DAC_TEST
+//#ifndef COSIN_DAC_TEST
     dac_start();    
-#endif 
+//#endif 
 
     ret = adc_digi_read_bytes(result, TIMES, &ret_num, ADC_MAX_DELAY); // ADC data obtained from DAC ring buffer
     setFrameHigh();
