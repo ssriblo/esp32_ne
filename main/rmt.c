@@ -74,14 +74,15 @@ void initRmt(channelPulses_t channelPulses){
 }
 void runRmt(channelPulses_t channelPulses) {
 	rmt_item32_t itemsA[5];
-	// itemsA[0].duration0 = 565;
+	// itemsA[0].duration0 = 198;
 	// itemsA[0].level0 = 0;
-	// itemsA[0].duration1 = 525;
+	// itemsA[0].duration1 = 158;
 	// itemsA[0].level1 = 0;
-	itemsA[0].duration0 = 398;
+	itemsA[0].duration0 = 240;
 	itemsA[0].level0 = 0;
-	itemsA[0].duration1 = 358;
+	itemsA[0].duration1 = 160;
 	itemsA[0].level1 = 0;
+
 	itemsA[1].duration0 = 22;
 	itemsA[1].level0 = 1;
 	itemsA[1].duration1 = 22;
@@ -130,22 +131,29 @@ void runRmt(channelPulses_t channelPulses) {
 		channelB = RMT_CHANNEL_3;
 	}
 
-	ESP_ERROR_CHECK(rmt_write_items(channelA, itemsA,
+rmt_write_items(channelA, itemsA,
 			5, /* Number of itemsA */
-			0 /* NOT wait till done */));
-    __asm__ __volatile__ ("nop");
-    __asm__ __volatile__ ("nop");
-    __asm__ __volatile__ ("nop");
-    __asm__ __volatile__ ("nop");
-    __asm__ __volatile__ ("nop");
-    __asm__ __volatile__ ("nop");
-    __asm__ __volatile__ ("nop");
-    __asm__ __volatile__ ("nop");
-    __asm__ __volatile__ ("nop");
-
-	ESP_ERROR_CHECK(rmt_write_items(channelB, itemsB,
+			0 /* NOT wait till done */);
+rmt_write_items(channelB, itemsB,
 			5, /* Number of itemsB */
-			0 /* wait till done */));
+			0 /* wait till done */);
+
+	// ESP_ERROR_CHECK(rmt_write_items(channelA, itemsA,
+	// 		5, /* Number of itemsA */
+	// 		0 /* NOT wait till done */));
+    // __asm__ __volatile__ ("nop");
+    // __asm__ __volatile__ ("nop");
+    // __asm__ __volatile__ ("nop");
+    // __asm__ __volatile__ ("nop");
+    // __asm__ __volatile__ ("nop");
+    // __asm__ __volatile__ ("nop");
+    // __asm__ __volatile__ ("nop");
+    // __asm__ __volatile__ ("nop");
+    // __asm__ __volatile__ ("nop");
+
+	// ESP_ERROR_CHECK(rmt_write_items(channelB, itemsB,
+	// 		5, /* Number of itemsB */
+	// 		0 /* wait till done */));
 }
 
 

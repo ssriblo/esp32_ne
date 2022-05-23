@@ -60,20 +60,31 @@ void loop(){
 void app_main(){
 
     gpio_ini();
-    pwm_init();
-#ifdef COSIN_DAC_TEST
-    dac_app_main(); // cosin generator
-#else
-    dac_init();
-#endif   
-    xTaskCreatePinnedToCore(
-                loop,   /* Function to implement the task */
-                "DataqAquringTask", /* Name of the task */
-                10000,      /* Stack size in words */
-                NULL,       /* Task input parameter */
-                16,          /* Priority of the task */
-                NULL,       /* Task handle. */
-                APP_CPU_NUM);  /* Core where the task should run */
+    initRmt(0); // функция Скрибловского - 0 или 1  
+while (1)
+{
+    setFrameLow();
+    runRmt(0); // функция Скрибловского - 0 или 1 
+    vTaskDelay( 1 ); // actually 150 ms period, why??
+    setFrameHigh();
+    vTaskDelay( 10 * portTICK_PERIOD_MS ); // actually 150 ms period, why??
+}
+
+
+//     pwm_init();
+// #ifdef COSIN_DAC_TEST
+//     dac_app_main(); // cosin generator
+// #else
+//     dac_init();
+// #endif   
+//     xTaskCreatePinnedToCore(
+//                 loop,   /* Function to implement the task */
+//                 "DataqAquringTask", /* Name of the task */
+//                 10000,      /* Stack size in words */
+//                 NULL,       /* Task input parameter */
+//                 16,          /* Priority of the task */
+//                 NULL,       /* Task handle. */
+//                 APP_CPU_NUM);  /* Core where the task should run */
 
 }
 
