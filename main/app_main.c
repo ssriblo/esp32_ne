@@ -61,12 +61,19 @@ void app_main(){
 
     gpio_ini();
     initRmt(0); // функция Скрибловского - 0 или 1  
+    pwm_init();
+
 while (1)
 {
+    // ledc_stop(ledc_mode_t speed_mode, ledc_channel_t channel, uint32_t idle_level);
+    ledc_stop(LEDC_MODE, LEDC_CHANNEL_40V, 0);
     setFrameLow();
     runRmt(0); // функция Скрибловского - 0 или 1 
     vTaskDelay( 1 ); // actually 150 ms period, why??
     setFrameHigh();
+    // ledc_fade_start(LEDC_MODE, LEDC_CHANNEL_40V, LEDC_FADE_NO_WAIT);
+    ledc_update_duty(LEDC_MODE, LEDC_CHANNEL_40V);
+
     vTaskDelay( 10 * portTICK_PERIOD_MS ); // actually 150 ms period, why??
 }
 
