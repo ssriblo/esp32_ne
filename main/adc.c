@@ -13,6 +13,9 @@
 #include "dac-cosin.h"
 #include "utility.h"
 #include "dac.h"
+
+#include "pwm.h"
+
 #include "rmt.h"
 #include "gpio.h"
 
@@ -122,7 +125,7 @@ static void continuous_adc_init(uint16_t adc1_chan_mask, uint16_t adc2_chan_mask
 void IRAM_ATTR start_adc_rmt_dac(channelPulses_t channelPulses)
 {
     // ESP_LOGI(TAG, ">-1"));
-    esp_err_t ret;
+    esp_err_t ret=0;
     uint32_t ret_num = 0;
     uint8_t result[TIMES] = {0};
     memset(result, 0xcc, TIMES);
@@ -146,16 +149,22 @@ void IRAM_ATTR start_adc_rmt_dac(channelPulses_t channelPulses)
 
 
     int t1 = sys_port_get_time_into_tick();
-    adc_digi_start(); // ADC+DMA start
+// adc_digi_start(); // ADC+DMA start
+    
+    ledc_stop(LEDC_MODE, LEDC_CHANNEL_40V, 0);
     setFrameLow();
+
     runRmt(channelPulses);
 
 #ifndef COSIN_DAC_TEST
     dac_start();    
 #endif 
 
-    ret = adc_digi_read_bytes(result, TIMES, &ret_num, ADC_MAX_DELAY); // ADC data obtained from DAC ring buffer
+// ret = adc_digi_read_bytes(result, TIMES, &ret_num, ADC_MAX_DELAY); // ADC data obtained from DAC ring buffer
+    
     setFrameHigh();
+    ledc_update_duty(LEDC_MODE, LEDC_CHANNEL_40V);
+
     int t2 = sys_port_get_time_into_tick();
 
 

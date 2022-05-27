@@ -34,7 +34,7 @@ void dac_init(){
 
 
 
-void dac_start(){
+void IRAM_ATTR  dac_start(){
     SENS.sar_dac_ctrl1.sw_tone_en = 0;
     SENS.sar_dac_ctrl2.dac_cw_en1 = 0;
 
