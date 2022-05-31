@@ -149,7 +149,8 @@ void IRAM_ATTR start_adc_rmt_dac(channelPulses_t channelPulses)
 
 
     int t1 = sys_port_get_time_into_tick();
-// adc_digi_start(); // ADC+DMA start
+    
+    adc_digi_start(); // ADC+DMA start
     
     ledc_stop(LEDC_MODE, LEDC_CHANNEL_40V, 0);
     setFrameLow();
@@ -160,7 +161,7 @@ void IRAM_ATTR start_adc_rmt_dac(channelPulses_t channelPulses)
     dac_start();    
 #endif 
 
-// ret = adc_digi_read_bytes(result, TIMES, &ret_num, ADC_MAX_DELAY); // ADC data obtained from DAC ring buffer
+    ret = adc_digi_read_bytes(result, TIMES, &ret_num, ADC_MAX_DELAY); // ADC data obtained from DAC ring buffer
     
     setFrameHigh();
     ledc_update_duty(LEDC_MODE, LEDC_CHANNEL_40V);
